@@ -1,0 +1,29 @@
+/* src/components/ui/Rating.module.css */
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2px;
+}
+
+.filled {
+  color: #FFC107;
+  fill: #FFC107;
+}
+
+.empty {
+  color: var(--color-text-muted);
+  fill: transparent;
+}
+
+.value {
+  margin-left: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
