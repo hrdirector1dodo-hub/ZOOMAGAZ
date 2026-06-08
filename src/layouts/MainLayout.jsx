@@ -1,16 +1,40 @@
 // src/layouts/MainLayout.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { ShoppingCart, Menu, X, Phone, Mail, MapPin, Heart } from 'lucide-react';
+import { ShoppingCart, Menu, X, Phone, Mail, MapPin, Heart, User } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
+import AuthModal from '../components/auth/AuthModal';
 import styles from './MainLayout.module.css';
 
 const MainLayout = ({ children }) => {
   const { cartCount } = useCart();
+  const { user, isAuthenticated, logout } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const closeDropdown = (e) => {
+      if (isDropdownOpen && !e.target.closest(`.${styles.userDropdownContainer}`)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    window.addEventListener('click', closeDropdown);
+    return () => window.removeEventListener('click', closeDropdown);
+  }, [isDropdownOpen]);
+
+  const handleLogoutClick = () => {
+    logout();
+    setIsDropdownOpen(false);
+    if (location.pathname === '/profile') {
+      navigate('/');
+    }
+  };
 
   // Handle header background change on scroll
   useEffect(() => {
@@ -83,6 +107,53 @@ const MainLayout = ({ children }) => {
               <ShoppingCart size={20} />
               {cartCount > 0 && <span className={styles.cartBadge}>{cartCount}</span>}
             </Link>
+
+            {/* Profile Action */}
+            {isAuthenticated ? (
+              <div className={styles.userDropdownContainer}>
+                <button 
+                  className={styles.userButton} 
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  aria-label="Профиль пользователя"
+                  type="button"
+                >
+                  <User size={20} />
+                  <span className={styles.userNameDesktop}>{user.name.split(' ')[0]}</span>
+                </button>
+                {isDropdownOpen && (
+                  <div className={styles.dropdownMenu}>
+                    <div className={styles.dropdownHeader}>
+                      <div className={styles.dropdownUserName}>{user.name}</div>
+                      <div className={styles.dropdownUserEmail}>{user.email}</div>
+                    </div>
+                    <Link 
+                      to="/profile" 
+                      className={styles.dropdownItem}
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      Личный кабинет
+                    </Link>
+                    <button 
+                      className={`${styles.dropdownItem} ${styles.logoutBtn}`}
+                      onClick={handleLogoutClick}
+                      type="button"
+                    >
+                      Выйти
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button 
+                className={styles.userButton} 
+                onClick={() => setIsAuthModalOpen(true)}
+                aria-label="Войти"
+                type="button"
+              >
+                <User size={20} />
+              </button>
+            )}
+
             <button 
               className={styles.menuButton} 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -101,9 +172,45 @@ const MainLayout = ({ children }) => {
             <a href="#about" onClick={(e) => { setIsMobileMenuOpen(false); handleNavClick('about', e); }} className={styles.mobileNavLink}>О компании</a>
             <a href="#promotions" onClick={(e) => { setIsMobileMenuOpen(false); handleNavClick('promotions', e); }} className={styles.mobileNavLink}>Акции</a>
             <a href="#contacts" onClick={(e) => { setIsMobileMenuOpen(false); handleNavClick('contacts', e); }} className={styles.mobileNavLink}>Контакты</a>
+            
+            <div className={styles.mobileSeparator}></div>
+            {isAuthenticated ? (
+              <>
+                <Link 
+                  to="/profile" 
+                  onClick={() => setIsMobileMenuOpen(false)} 
+                  className={styles.mobileNavLink}
+                >
+                  Личный кабинет ({user.name.split(' ')[0]})
+                </Link>
+                <button 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    handleLogoutClick();
+                  }} 
+                  className={`${styles.mobileNavLink} ${styles.mobileLogoutBtn}`}
+                  type="button"
+                >
+                  Выйти
+                </button>
+              </>
+            ) : (
+              <button 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsAuthModalOpen(true);
+                }} 
+                className={styles.mobileNavLink}
+                type="button"
+              >
+                Войти / Регистрация
+              </button>
+            )}
           </nav>
         </div>
       </header>
+
+      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
 
       <main className={styles.main}>
         {children}
