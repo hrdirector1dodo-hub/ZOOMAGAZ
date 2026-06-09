@@ -5,6 +5,7 @@ import { ShoppingCart, Menu, X, Phone, Mail, MapPin, Heart, User } from 'lucide-
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import AuthModal from '../components/auth/AuthModal';
+import ChatBot from '../components/ChatBot/ChatBot';
 import styles from './MainLayout.module.css';
 
 const MainLayout = ({ children }) => {
@@ -211,6 +212,7 @@ const MainLayout = ({ children }) => {
       </header>
 
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
+      <ChatBot />
 
       <main className={styles.main}>
         {children}
