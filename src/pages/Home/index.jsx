@@ -105,22 +105,22 @@ const Home = () => {
 
           <div className={styles.advantagesList}>
             <div className={styles.advantageCard}>
-              <CheckCircle2 size={24} className={styles.advantageIcon} />
+              <CheckCircle2 size={20} className={styles.advantageIcon} />
               <h3 className={styles.advantageTitle}>100% Эко-состав</h3>
               <p className={styles.advantageText}>Корма без сои, консервантов, искусственных красителей и ароматизаторов.</p>
             </div>
             <div className={styles.advantageCard}>
-              <CheckCircle2 size={24} className={styles.advantageIcon} />
+              <CheckCircle2 size={20} className={styles.advantageIcon} />
               <h3 className={styles.advantageTitle}>Био-упаковка</h3>
               <p className={styles.advantageText}>Большинство наших аксессуаров и лакомств упакованы в разлагаемые материалы.</p>
             </div>
             <div className={styles.advantageCard}>
-              <CheckCircle2 size={24} className={styles.advantageIcon} />
+              <CheckCircle2 size={20} className={styles.advantageIcon} />
               <h3 className={styles.advantageTitle}>Ветеринарный отбор</h3>
               <p className={styles.advantageText}>Все товары проходят жесткий контроль со стороны ветеринарных врачей.</p>
             </div>
             <div className={styles.advantageCard}>
-              <CheckCircle2 size={24} className={styles.advantageIcon} />
+              <CheckCircle2 size={20} className={styles.advantageIcon} />
               <h3 className={styles.advantageTitle}>Забота о природе</h3>
               <p className={styles.advantageText}>Часть средств с каждой покупки направляется в фонды защиты диких животных.</p>
             </div>
