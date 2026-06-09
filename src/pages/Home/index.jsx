@@ -176,8 +176,6 @@ const Home = () => {
                 <div className={styles.supplierLogoWrapper}>
                   <img src={sup.logo} alt={sup.name} className={styles.supplierLogo} />
                 </div>
-                <h3 className={styles.supplierName}>{sup.name}</h3>
-                <p className={styles.supplierDesc}>{sup.desc}</p>
               </div>
             ))}
           </div>
