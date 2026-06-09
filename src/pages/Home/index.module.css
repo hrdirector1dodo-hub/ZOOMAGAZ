@@ -702,12 +702,6 @@
     font-size: 1.8rem;
   }
   
-  .advantagesList {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 24px;
-  }
-  
   .suppliersGrid {
     grid-template-columns: 1fr;
   }
@@ -724,3 +718,38 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .advantagesList {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+    margin-top: 20px !important;
+  }
+
+  .advantageCard {
+    padding: 8px 4px !important;
+    border-radius: var(--radius-sm) !important;
+    align-items: center !important;
+    text-align: center !important;
+    min-height: auto !important;
+  }
+
+  .advantageIcon {
+    width: 18px !important;
+    height: 18px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .advantageTitle {
+    font-size: 0.72rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin-bottom: 0 !important;
+    word-break: break-word !important;
+  }
+
+  .advantageText {
+    display: none !important;
+  }
+}
+
