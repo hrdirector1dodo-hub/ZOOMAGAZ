@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 60" width="100%" height="100%">
+  <style>
+    .brand { font-family: 'Georgia', serif; font-weight: 700; font-size: 20px; fill: #1B5E20; font-style: italic; }
+    .sub { font-family: Arial, sans-serif; font-size: 5px; fill: #D84315; letter-spacing: 2px; font-weight: bold; }
+  </style>
+  <g transform="translate(10, 8)">
+    <!-- Wheat sheaf icon -->
+    <g transform="translate(10, 5)" fill="#F57C00">
+      <path d="M 10,15 C 10,12 8,10 5,12 C 7,14 10,15 10,15 Z" />
+      <path d="M 12,12 C 12,9 10,7 7,9 C 9,11 12,12 12,12 Z" />
+      <path d="M 14,9 C 14,6 12,4 9,6 C 11,8 14,9 14,9 Z" />
+      
+      <path d="M 12,15 C 12,12 14,10 17,12 C 15,14 12,15 12,15 Z" />
+      <path d="M 10,12 C 10,9 12,7 15,9 C 13,11 10,12 10,12 Z" />
+      <path d="M 8,9 C 8,6 10,4 13,6 C 11,8 8,9 8,9 Z" />
+      
+      <line x1="11" y1="23" x2="11" y2="7" stroke="#1B5E20" stroke-width="1.5" />
+    </g>
+    <!-- Brand text -->
+    <text x="35" y="24" class="brand">Farmina</text>
+    <text x="36" y="32" class="sub">PET FOODS - NATURE &amp; SCIENCE</text>
+  </g>
+</svg>

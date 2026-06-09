@@ -7,6 +7,13 @@ import Button from '../../components/ui/Button';
 import Rating from '../../components/ui/Rating';
 import styles from './index.module.css';
 
+import royalCaninLogo from '../../assets/suppliers/royal-canin.svg';
+import purinaLogo from '../../assets/suppliers/purina.svg';
+import britLogo from '../../assets/suppliers/brit.svg';
+import proPlanLogo from '../../assets/suppliers/pro-plan.svg';
+import farminaLogo from '../../assets/suppliers/farmina.svg';
+import mongeLogo from '../../assets/suppliers/monge.svg';
+
 const Home = () => {
   const navigate = useNavigate();
   
@@ -35,12 +42,36 @@ const Home = () => {
   }, []);
 
   const suppliers = [
-    { name: 'Royal Canin' },
-    { name: 'Purina' },
-    { name: 'Brit' },
-    { name: 'Pro Plan' },
-    { name: 'Farmina' },
-    { name: 'Monge' }
+    { 
+      name: 'Royal Canin', 
+      logo: royalCaninLogo, 
+      desc: 'Премиальные рационы для собак и кошек' 
+    },
+    { 
+      name: 'Purina', 
+      logo: purinaLogo, 
+      desc: 'Сбалансированное питание на каждый день' 
+    },
+    { 
+      name: 'Brit', 
+      logo: britLogo, 
+      desc: 'Гипоаллергенные корма супер-премиум класса' 
+    },
+    { 
+      name: 'Pro Plan', 
+      logo: proPlanLogo, 
+      desc: 'Научный подход к питанию питомцев' 
+    },
+    { 
+      name: 'Farmina', 
+      logo: farminaLogo, 
+      desc: 'Натуральные итальянские корма' 
+    },
+    { 
+      name: 'Monge', 
+      logo: mongeLogo, 
+      desc: 'Качество семейных рецептур из Италии' 
+    }
   ];
 
   return (
@@ -142,7 +173,11 @@ const Home = () => {
                 className={styles.supplierCard}
                 onClick={() => navigate(`/catalog?brand=${encodeURIComponent(sup.name)}`)}
               >
-                <span>{sup.name}</span>
+                <div className={styles.supplierLogoWrapper}>
+                  <img src={sup.logo} alt={sup.name} className={styles.supplierLogo} />
+                </div>
+                <h3 className={styles.supplierName}>{sup.name}</h3>
+                <p className={styles.supplierDesc}>{sup.desc}</p>
               </div>
             ))}
           </div>

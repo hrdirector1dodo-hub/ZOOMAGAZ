@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 60" width="100%" height="100%">
+  <style>
+    .brand { font-family: 'Outfit', 'Inter', Arial, sans-serif; font-weight: 800; font-size: 26px; fill: #005691; }
+    .sub { font-family: Arial, sans-serif; font-weight: 600; font-size: 7px; fill: #8DC63F; letter-spacing: 1px; }
+  </style>
+  <g transform="translate(10, 5)">
+    <!-- Paw print accent -->
+    <path d="M 115,25 C 115,22 118,20 120,22 C 122,24 121,27 119,28 C 117,29 115,27 115,25 Z" fill="#8DC63F" />
+    <path d="M 124,18 C 124,15 127,14 129,16 C 131,18 130,21 128,22 C 126,23 124,21 124,18 Z" fill="#8DC63F" />
+    <path d="M 134,22 C 134,19 137,18 139,20 C 141,22 140,25 138,26 C 136,27 134,25 134,22 Z" fill="#8DC63F" />
+    <!-- Large pad -->
+    <path d="M 122,34 C 120,31 123,28 126,29 C 129,30 131,28 132,31 C 133,34 130,37 127,37 C 124,37 122,34 122,34 Z" fill="#8DC63F" />
+    
+    <!-- Main text -->
+    <text x="15" y="38" class="brand">Brit</text>
+    <text x="17" y="47" class="sub">PET FOOD</text>
+  </g>
+</svg>
