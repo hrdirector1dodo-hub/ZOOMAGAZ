@@ -6,6 +6,7 @@ import Catalog from '../pages/Catalog';
 import ProductDetail from '../pages/ProductDetail';
 import Cart from '../pages/Cart';
 import Profile from '../pages/Profile';
+import NotFound from '../pages/NotFound';
 
 const AppRoutes = () => {
   return (
@@ -16,7 +17,7 @@ const AppRoutes = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/profile" element={<Profile />} />
       {/* Fallback route */}
-      <Route path="*" element={<Catalog />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
