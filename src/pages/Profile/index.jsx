@@ -3,12 +3,23 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { User, Mail, Phone, Calendar, Gift, ShoppingBag, ChevronDown, ChevronUp, Save, LogOut } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { useOrders } from '../../context/OrdersContext';
 import Button from '../../components/ui/Button';
 import styles from './index.module.css';
 
 const Profile = () => {
   const { user, updateProfile, logout, loading: authLoading } = useAuth();
+  const { getUserOrders } = useOrders();
   const navigate = useNavigate();
+
+  const [orders, setOrders] = useState([]);
+
+  // Load orders
+  useEffect(() => {
+    if (user) {
+      setOrders(getUserOrders(user));
+    }
+  }, [user, getUserOrders]);
 
   // Redirect to home if not logged in and not loading
   useEffect(() => {
@@ -144,8 +155,8 @@ const Profile = () => {
             >
               <ShoppingBag size={18} />
               <span>Мои заказы</span>
-              {user.orders && user.orders.length > 0 && (
-                <span className={styles.badge}>{user.orders.length}</span>
+              {orders && orders.length > 0 && (
+                <span className={styles.badge}>{orders.length}</span>
               )}
             </button>
             <button 
@@ -176,55 +187,118 @@ const Profile = () => {
           {activeTab === 'orders' ? (
             <div className={styles.tabContent}>
               <h2 className={styles.contentTitle}>История заказов</h2>
-              {!user.orders || user.orders.length === 0 ? (
+              {!orders || orders.length === 0 ? (
                 <div className={styles.emptyOrders}>
                   <ShoppingBag size={48} className={styles.emptyIcon} />
-                  <h3>У вас еще нет заказов</h3>
-                  <p>Перейдите в наш каталог, чтобы порадовать своего любимца!</p>
+                  <h3>У вас пока нет заказов</h3>
+                  <p>Перейдите в наш каталог, чтобы выбрать качественные и экологичные товары для своего любимого питомца!</p>
                   <Button variant="secondary" onClick={() => navigate('/catalog')}>
-                    В каталог
+                    Перейти в каталог
                   </Button>
                 </div>
               ) : (
                 <div className={styles.ordersList}>
-                  {user.orders.map((order) => (
-                    <div key={order.id} className={styles.orderCard}>
-                      <div className={styles.orderHeader} onClick={() => toggleOrder(order.id)}>
-                        <div className={styles.orderMeta}>
-                          <span className={styles.orderId}>Заказ #{order.id}</span>
-                          <span className={styles.orderDate}>{order.date}</span>
-                        </div>
-                        <div className={styles.orderInfo}>
-                          <span className={styles.orderTotal}>{order.total.toLocaleString()} ₽</span>
-                          <span className={`${styles.orderStatus} ${
-                            order.status === 'Доставлен' ? styles.statusDelivered : styles.statusShipped
-                          }`}>
-                            {order.status}
-                          </span>
-                          <button className={styles.expandBtn} type="button">
-                            {expandedOrders[order.id] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                          </button>
-                        </div>
-                      </div>
+                  {orders.map((order) => {
+                    const orderDate = new Date(order.createdAt || order.date).toLocaleDateString('ru-RU', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit'
+                    });
 
-                      {expandedOrders[order.id] && (
-                        <div className={styles.orderDetail}>
-                          <div className={styles.orderDetailHeader}>Состав заказа:</div>
-                          <div className={styles.orderItems}>
-                            {order.items && order.items.map((item, idx) => (
-                              <div key={idx} className={styles.orderItem}>
-                                <div className={styles.orderItemName}>{item.name}</div>
-                                <div className={styles.orderItemMeta}>
-                                  <span>{item.count} шт.</span>
-                                  <span>{item.price.toLocaleString()} ₽</span>
-                                </div>
-                              </div>
-                            ))}
+                    let statusClass = styles.statusNew;
+                    if (order.status === 'Завершен' || order.status === 'Доставлен') {
+                      statusClass = styles.statusCompleted;
+                    } else if (order.status === 'В обработке' || order.status === 'В пути') {
+                      statusClass = styles.statusProcessing;
+                    } else if (order.status === 'Отменен') {
+                      statusClass = styles.statusCancelled;
+                    }
+
+                    const totalItems = order.items ? order.items.reduce((sum, item) => sum + (item.quantity || item.count || 0), 0) : 0;
+                    const totalVal = order.totalAmount || order.total || 0;
+
+                    return (
+                      <div key={order.id} className={styles.orderCard}>
+                        <div className={styles.orderHeader} onClick={() => toggleOrder(order.id)}>
+                          <div className={styles.orderMeta}>
+                            <span className={styles.orderId}>Заказ #{order.id}</span>
+                            <span className={styles.orderDate}>{orderDate}</span>
+                          </div>
+                          <div className={styles.orderInfo}>
+                            <span className={styles.orderTotal}>{totalVal.toLocaleString()} ₽</span>
+                            <span className={`${styles.orderStatus} ${statusClass}`}>
+                              {order.status}
+                            </span>
+                            <button 
+                              className={styles.detailsBtn} 
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleOrder(order.id);
+                              }}
+                              type="button"
+                            >
+                              <span>Подробнее</span>
+                              {expandedOrders[order.id] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                            </button>
                           </div>
                         </div>
-                      )}
-                    </div>
-                  ))}
+
+                        {expandedOrders[order.id] && (
+                          <div className={styles.orderDetail}>
+                            <div className={styles.orderDetailHeader}>Информация о доставке и оплате:</div>
+                            <div className={styles.orderInfoGrid}>
+                              <div className={styles.infoBlock}>
+                                <strong>Получатель:</strong> {order.customer?.name || user.name}
+                              </div>
+                              <div className={styles.infoBlock}>
+                                <strong>Телефон:</strong> {order.customer?.phone || user.phone || 'Не указан'}
+                              </div>
+                              {order.customer?.email && (
+                                <div className={styles.infoBlock}>
+                                  <strong>Email:</strong> {order.customer.email}
+                                </div>
+                              )}
+                              {order.paymentMethod && (
+                                <div className={styles.infoBlock}>
+                                  <strong>Способ оплаты:</strong> {order.paymentMethod === 'card' ? 'Картой на сайте' : 'При получении'}
+                                </div>
+                              )}
+                              {order.address && (
+                                <div className={styles.infoBlock} style={{ gridColumn: 'span 2' }}>
+                                  <strong>Адрес доставки:</strong> {order.address}
+                                </div>
+                              )}
+                            </div>
+
+                            <div className={styles.orderDetailHeader} style={{ marginTop: '20px' }}>Состав заказа ({totalItems} шт):</div>
+                            <div className={styles.orderItems}>
+                              {order.items && order.items.map((item, idx) => {
+                                const qty = item.quantity || item.count || 1;
+                                const itemPrice = item.price || 0;
+                                const itemTotal = item.total || (itemPrice * qty);
+                                return (
+                                  <div key={idx} className={styles.orderItem}>
+                                    <div className={styles.orderItemName}>{item.name}</div>
+                                    <div className={styles.orderItemMeta}>
+                                      <span>{qty} шт x {itemPrice.toLocaleString()} ₽</span>
+                                      <span>{itemTotal.toLocaleString()} ₽</span>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+
+                            <div className={styles.orderDetailTotal}>
+                              <span>Итоговая сумма заказа:</span>
+                              <span className={styles.orderTotalAmount}>{totalVal.toLocaleString()} ₽</span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>

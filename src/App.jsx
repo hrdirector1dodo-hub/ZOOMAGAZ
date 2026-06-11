@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import { OrdersProvider } from './context/OrdersContext';
 import { CartProvider } from './context/CartContext';
 import MainLayout from './layouts/MainLayout';
 import AppRoutes from './routes';
@@ -11,11 +12,13 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <CartProvider>
-          <MainLayout>
-            <AppRoutes />
-          </MainLayout>
-        </CartProvider>
+        <OrdersProvider>
+          <CartProvider>
+            <MainLayout>
+              <AppRoutes />
+            </MainLayout>
+          </CartProvider>
+        </OrdersProvider>
       </AuthProvider>
     </Router>
   );

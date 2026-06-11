@@ -1,14 +1,19 @@
 // src/pages/Cart/index.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, Plus, Minus, ShoppingBag, CheckCircle, ArrowRight } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
+import { useOrders } from '../../context/OrdersContext';
 import { formatPrice } from '../../utils/format';
 import Button from '../../components/ui/Button';
 import styles from './index.module.css';
 
 const Cart = () => {
   const { cart, updateQuantity, removeFromCart, clearCart, cartTotal, increaseQuantity, decreaseQuantity } = useCart();
+  const { user } = useAuth();
+  const { createOrder } = useOrders();
+  const navigate = useNavigate();
 
   // Checkout Form States
   const [formData, setFormData] = useState({
@@ -20,7 +25,6 @@ const Cart = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [orderId, setOrderId] = useState(null);
 
   // Delivery Calculations
   const deliveryThreshold = 2000;
@@ -51,6 +55,12 @@ const Cart = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!user) {
+      alert("Для оформления заказа необходимо войти или зарегистрироваться.");
+      return;
+    }
+
     if (!formData.name || !formData.phone || !formData.address) {
       alert('Пожалуйста, заполните обязательные поля: ФИО, Телефон и Адрес доставки.');
       return;
@@ -62,40 +72,16 @@ const Cart = () => {
 
     setIsSubmitting(true);
 
-    // Simulate API request to save order
+    // Save order in localStorage via OrdersContext
+    createOrder(user, cart, finalTotal, formData);
+
     setTimeout(() => {
-      const generatedId = 'EP-' + Math.floor(100000 + Math.random() * 900000);
-      setOrderId(generatedId);
       clearCart();
       setIsSubmitting(false);
-    }, 1000);
+      alert("Заказ успешно оформлен");
+      navigate('/profile');
+    }, 500);
   };
-
-  // If order was successfully placed
-  if (orderId) {
-    return (
-      <div className="container animate-fade-in">
-        <div className={styles.successCard}>
-          <div className={styles.successIconWrapper}>
-            <CheckCircle size={48} />
-          </div>
-          <h2 className={styles.successTitle}>Заказ успешно оформлен!</h2>
-          <p className={styles.successText}>
-            Спасибо за покупку в EcoPet! Наш менеджер свяжется с вами в течение 15 минут для подтверждения заказа и согласования времени доставки.
-          </p>
-          <div>
-            <span>Номер вашего заказа:</span>
-            <div className={styles.orderId}>{orderId}</div>
-          </div>
-          <Link to="/catalog" style={{ marginTop: '12px' }}>
-            <Button variant="primary" size="lg">
-              Продолжить покупки
-            </Button>
-          </Link>
-        </div>
-      </div>
-    );
-  }
 
   // If cart is empty
   if (cart.length === 0) {
