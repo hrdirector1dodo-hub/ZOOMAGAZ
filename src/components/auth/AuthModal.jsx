@@ -110,6 +110,10 @@ const AuthModal = ({ isOpen, onClose }) => {
         setError('Имя является обязательным полем');
         return false;
       }
+      if (phone && !/^[78]\d{10}$/.test(phone)) {
+        setError('Введите корректный номер телефона Казахстана. Пример: 87071234567');
+        return false;
+      }
       if (password !== confirmPassword) {
         setError('Пароли не совпадают');
         return false;
@@ -280,14 +284,30 @@ const AuthModal = ({ isOpen, onClose }) => {
                 <Phone size={18} className={styles.inputIcon} />
                 <input 
                   type="tel" 
+                  inputMode="numeric"
+                  autoComplete="tel"
                   id="auth-phone"
-                  placeholder="+7 (999) 123-45-67" 
+                  placeholder="87071234567" 
                   className={styles.input}
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => {
+                    let val = e.target.value.replace(/\D/g, '');
+                    if (val.startsWith('7') && val.length === 11) {
+                      val = '8' + val.slice(1);
+                    } else if (val.length === 10 && (val.startsWith('70') || val.startsWith('77') || val.startsWith('74') || val.startsWith('78'))) {
+                      val = '8' + val;
+                    }
+                    if (val.length > 11) {
+                      val = val.slice(0, 11);
+                    }
+                    setPhone(val);
+                  }}
                   disabled={loading}
                 />
               </div>
+              <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
+                Формат: 87071234567
+              </span>
             </div>
           )}
 

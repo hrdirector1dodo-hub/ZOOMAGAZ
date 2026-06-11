@@ -33,13 +33,30 @@ const Cart = () => {
   };
 
   const handleFieldChange = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    let finalValue = value;
+    if (field === 'phone') {
+      let val = value.replace(/\D/g, '');
+      if (val.startsWith('7') && val.length === 11) {
+        val = '8' + val.slice(1);
+      } else if (val.length === 10 && (val.startsWith('70') || val.startsWith('77') || val.startsWith('74') || val.startsWith('78'))) {
+        val = '8' + val;
+      }
+      if (val.length > 11) {
+        val = val.slice(0, 11);
+      }
+      finalValue = val;
+    }
+    setFormData(prev => ({ ...prev, [field]: finalValue }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.address) {
       alert('Пожалуйста, заполните обязательные поля: ФИО, Телефон и Адрес доставки.');
+      return;
+    }
+    if (!/^[78]\d{10}$/.test(formData.phone)) {
+      alert('Введите корректный номер телефона Казахстана. Пример: 87071234567');
       return;
     }
 
@@ -207,12 +224,17 @@ const Cart = () => {
                 <label className={styles.label}>Телефон *</label>
                 <input 
                   type="tel" 
+                  inputMode="numeric"
+                  autoComplete="tel"
                   required
-                  placeholder="+7 (999) 999-99-99"
+                  placeholder="87071234567"
                   value={formData.phone}
                   onChange={(e) => handleFieldChange('phone', e.target.value)}
                   className={styles.input}
                 />
+                <span style={{ display: 'block', fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
+                  Формат: 87071234567
+                </span>
               </div>
 
               <div className={styles.formGroup}>
