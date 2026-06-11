@@ -8,7 +8,7 @@ import Button from '../../components/ui/Button';
 import styles from './index.module.css';
 
 const Cart = () => {
-  const { cart, updateQuantity, removeFromCart, clearCart, cartTotal } = useCart();
+  const { cart, updateQuantity, removeFromCart, clearCart, cartTotal, increaseQuantity, decreaseQuantity } = useCart();
 
   // Checkout Form States
   const [formData, setFormData] = useState({
@@ -144,8 +144,7 @@ const Cart = () => {
                   <div className={styles.quantitySelector}>
                     <button 
                       className={styles.quantityBtn}
-                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      disabled={item.quantity <= 1}
+                      onClick={() => decreaseQuantity(item.id)}
                       aria-label="Уменьшить количество"
                     >
                       <Minus size={14} />
@@ -153,7 +152,7 @@ const Cart = () => {
                     <span className={styles.quantityValue}>{item.quantity}</span>
                     <button 
                       className={styles.quantityBtn}
-                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                      onClick={() => increaseQuantity(item.id)}
                       disabled={item.quantity >= item.inStock}
                       aria-label="Увеличить количество"
                     >

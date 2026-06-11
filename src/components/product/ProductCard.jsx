@@ -1,7 +1,7 @@
 // src/components/product/ProductCard.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, Check } from 'lucide-react';
+import { ShoppingCart, Check, Plus, Minus } from 'lucide-react';
 import Rating from '../ui/Rating';
 import { useCart } from '../../context/CartContext';
 import { formatPrice } from '../../utils/format';
@@ -15,10 +15,28 @@ const ProductCard = ({ product }) => {
   const isOutOfStock = inStock === 0;
   const isLowStock = inStock > 0 && inStock <= 5;
 
+  const [quantity, setQuantity] = useState(1);
+
+  const handleDecrement = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (quantity > 1) {
+      setQuantity(prev => prev - 1);
+    }
+  };
+
+  const handleIncrement = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (quantity < inStock) {
+      setQuantity(prev => prev + 1);
+    }
+  };
+
   const handleAdd = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    addToCart(product, 1);
+    addToCart(product, quantity);
   };
 
   // Determine stock badge text
@@ -50,14 +68,38 @@ const ProductCard = ({ product }) => {
             <span className={styles.price}>{formatPrice(price)}</span>
           </div>
           
-          <button 
-            className={styles.addButton}
-            onClick={handleAdd}
-            disabled={isOutOfStock}
-            aria-label="Добавить в корзину"
-          >
-            {isInCart ? <Check size={20} /> : <ShoppingCart size={20} />}
-          </button>
+          <div className={styles.actionsCol}>
+            {!isOutOfStock && (
+              <div className={styles.quantitySelector}>
+                <button 
+                  className={styles.quantityBtn}
+                  onClick={handleDecrement}
+                  disabled={quantity <= 1}
+                  aria-label="Уменьшить количество"
+                >
+                  <Minus size={14} />
+                </button>
+                <span className={styles.quantityValue}>{quantity}</span>
+                <button 
+                  className={styles.quantityBtn}
+                  onClick={handleIncrement}
+                  disabled={quantity >= inStock}
+                  aria-label="Увеличить количество"
+                >
+                  <Plus size={14} />
+                </button>
+              </div>
+            )}
+            
+            <button 
+              className={styles.addButton}
+              onClick={handleAdd}
+              disabled={isOutOfStock}
+              aria-label="Добавить в корзину"
+            >
+              {isInCart ? <Check size={20} /> : <ShoppingCart size={20} />}
+            </button>
+          </div>
         </div>
       </div>
     </Link>
