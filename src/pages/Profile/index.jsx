@@ -4,12 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { User, Mail, Phone, Calendar, Gift, ShoppingBag, ChevronDown, ChevronUp, Save, LogOut } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useOrders } from '../../context/OrdersContext';
+import { useBonus } from '../../context/BonusContext';
 import Button from '../../components/ui/Button';
 import styles from './index.module.css';
 
 const Profile = () => {
   const { user, updateProfile, logout, loading: authLoading } = useAuth();
   const { getUserOrders } = useOrders();
+  const { balance: bonusBalance, history: bonusHistory } = useBonus();
   const navigate = useNavigate();
 
   const [orders, setOrders] = useState([]);
@@ -134,12 +136,12 @@ const Profile = () => {
         <div className={styles.bonusCard}>
           <div className={styles.bonusHeader}>
             <Gift size={20} className={styles.bonusIcon} />
-            <span>Эко-бонусы EcoPet</span>
+            <span>Бонусный баланс EcoPet</span>
           </div>
-          <div className={styles.bonusCount}>{user.bonuses || 0}</div>
-          <p className={styles.bonusSub}>1 бонус = 1 рубль скидки</p>
+          <div className={styles.bonusCount}>{bonusBalance}</div>
+          <p className={styles.bonusSub}>1 бонус = 1 рубль/тенге скидки</p>
           <div className={styles.bonusTip}>
-            Начисляются за сдачу упаковки в ресайклинг и покупку товаров категории "Эко"
+            Начисляется кэшбэк 1% за заказы от 10 000 ₽.
           </div>
         </div>
       </div>
@@ -158,6 +160,14 @@ const Profile = () => {
               {orders && orders.length > 0 && (
                 <span className={styles.badge}>{orders.length}</span>
               )}
+            </button>
+            <button 
+              className={`${styles.navBtn} ${activeTab === 'bonuses' ? styles.navBtnActive : ''}`}
+              onClick={() => setActiveTab('bonuses')}
+              type="button"
+            >
+              <Gift size={18} />
+              <span>Мои бонусы</span>
             </button>
             <button 
               className={`${styles.navBtn} ${activeTab === 'settings' ? styles.navBtnActive : ''}`}
@@ -299,6 +309,86 @@ const Profile = () => {
                       </div>
                     );
                   })}
+                </div>
+              )}
+            </div>
+          ) : activeTab === 'bonuses' ? (
+            <div className={styles.tabContent}>
+              <h2 className={styles.contentTitle}>Мои бонусы</h2>
+              
+              {/* Bonuses Stats Grid */}
+              <div className={styles.bonusesStatsGrid}>
+                <div className={styles.bonusStatCard}>
+                  <span className={styles.statLabel}>Текущий баланс</span>
+                  <span className={styles.statVal} style={{ color: 'var(--color-primary-jade)' }}>
+                    {bonusBalance.toLocaleString()} ₽
+                  </span>
+                </div>
+                <div className={styles.bonusStatCard}>
+                  <span className={styles.statLabel}>Всего начислено</span>
+                  <span className={styles.statVal}>
+                    {bonusHistory
+                      .filter(op => op.type === 'Начисление')
+                      .reduce((sum, op) => sum + op.amount, 0)
+                      .toLocaleString()} ₽
+                  </span>
+                </div>
+                <div className={styles.bonusStatCard}>
+                  <span className={styles.statLabel}>Всего списано</span>
+                  <span className={styles.statVal} style={{ color: 'var(--color-danger)' }}>
+                    {bonusHistory
+                      .filter(op => op.type === 'Списание')
+                      .reduce((sum, op) => sum + op.amount, 0)
+                      .toLocaleString()} ₽
+                  </span>
+                </div>
+              </div>
+
+              {/* History Table */}
+              <h3 className={styles.bonusesHistoryTitle}>История операций</h3>
+              {bonusHistory.length === 0 ? (
+                <p style={{ color: 'var(--color-text-light)', fontStyle: 'italic' }}>У вас пока нет операций с бонусами.</p>
+              ) : (
+                <div className={styles.historyTableContainer}>
+                  <table className={styles.historyTable}>
+                    <thead>
+                      <tr>
+                        <th>Дата</th>
+                        <th>Тип операции</th>
+                        <th>Заказ</th>
+                        <th>Сумма заказа</th>
+                        <th>Бонусы</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {bonusHistory.map((op) => {
+                        const dateStr = new Date(op.createdAt).toLocaleDateString('ru-RU', {
+                          year: 'numeric',
+                          month: '2-digit',
+                          day: '2-digit',
+                          hour: '2-digit',
+                          minute: '2-digit'
+                        });
+
+                        const isEarn = op.type === 'Начисление';
+                        return (
+                          <tr key={op.id}>
+                            <td>{dateStr}</td>
+                            <td>
+                              <span className={isEarn ? styles.opEarnBadge : styles.opSpendBadge}>
+                                {op.type}
+                              </span>
+                            </td>
+                            <td>{op.orderId}</td>
+                            <td>{op.orderTotal > 0 ? `${op.orderTotal.toLocaleString()} ₽` : '—'}</td>
+                            <td className={isEarn ? styles.amountEarn : styles.amountSpend}>
+                              {isEarn ? `+${op.amount}` : `-${op.amount}`}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
                 </div>
               )}
             </div>

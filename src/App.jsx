@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import { BonusProvider } from './context/BonusContext';
 import { OrdersProvider } from './context/OrdersContext';
 import { CartProvider } from './context/CartContext';
 import MainLayout from './layouts/MainLayout';
@@ -12,13 +13,15 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <OrdersProvider>
-          <CartProvider>
-            <MainLayout>
-              <AppRoutes />
-            </MainLayout>
-          </CartProvider>
-        </OrdersProvider>
+        <BonusProvider>
+          <OrdersProvider>
+            <CartProvider>
+              <MainLayout>
+                <AppRoutes />
+              </MainLayout>
+            </CartProvider>
+          </OrdersProvider>
+        </BonusProvider>
       </AuthProvider>
     </Router>
   );

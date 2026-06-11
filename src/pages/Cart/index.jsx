@@ -5,6 +5,7 @@ import { Trash2, Plus, Minus, ShoppingBag, CheckCircle, ArrowRight } from 'lucid
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
 import { useOrders } from '../../context/OrdersContext';
+import { useBonus } from '../../context/BonusContext';
 import { formatPrice } from '../../utils/format';
 import Button from '../../components/ui/Button';
 import styles from './index.module.css';
@@ -13,6 +14,7 @@ const Cart = () => {
   const { cart, updateQuantity, removeFromCart, clearCart, cartTotal, increaseQuantity, decreaseQuantity } = useCart();
   const { user } = useAuth();
   const { createOrder } = useOrders();
+  const { balance, spendBonus, addBonus, calculateCashback, getUserKey } = useBonus();
   const navigate = useNavigate();
 
   // Checkout Form States
@@ -25,11 +27,36 @@ const Cart = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [bonusesInput, setBonusesInput] = useState('');
+  const [appliedBonuses, setAppliedBonuses] = useState(0);
 
   // Delivery Calculations
   const deliveryThreshold = 2000;
   const deliveryCost = cartTotal >= deliveryThreshold ? 0 : 250;
   const finalTotal = cartTotal + deliveryCost;
+  const payableTotal = Math.max(0, finalTotal - appliedBonuses);
+
+  const handleApplyBonuses = (e) => {
+    e.preventDefault();
+    if (!user) {
+      alert("Для использования бонусов необходимо войти в систему");
+      return;
+    }
+    const val = parseInt(bonusesInput, 10);
+    if (isNaN(val) || val < 0) {
+      alert("Введите корректное количество бонусов");
+      return;
+    }
+    if (val > balance) {
+      alert(`Недостаточно бонусов. Ваш баланс: ${balance}`);
+      return;
+    }
+    if (val > cartTotal) {
+      alert(`Нельзя списать больше суммы товаров: ${cartTotal}`);
+      return;
+    }
+    setAppliedBonuses(val);
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -72,13 +99,31 @@ const Cart = () => {
 
     setIsSubmitting(true);
 
+    const userKey = getUserKey();
     // Save order in localStorage via OrdersContext
-    createOrder(user, cart, finalTotal, formData);
+    const order = createOrder(user, cart, payableTotal, formData);
+    const orderId = order ? order.id : 'EP-' + Math.floor(100000 + Math.random() * 900000);
+
+    if (appliedBonuses > 0) {
+      spendBonus(userKey, appliedBonuses, orderId);
+    }
+
+    // Cashback is computed on total amount after applying bonuses
+    const payableProductsTotal = cartTotal - appliedBonuses;
+    const cashback = calculateCashback(payableProductsTotal);
+    
+    if (cashback > 0) {
+      addBonus(userKey, cashback, orderId, payableProductsTotal);
+    }
 
     setTimeout(() => {
       clearCart();
       setIsSubmitting(false);
-      alert("Заказ успешно оформлен");
+      if (cashback > 0) {
+        alert(`Заказ успешно оформлен. Вам начислено ${cashback} бонусов.`);
+      } else {
+        alert("Заказ успешно оформлен. Кэшбэк начисляется за заказы от 10 000 тг.");
+      }
       navigate('/profile');
     }, 500);
   };
@@ -184,9 +229,63 @@ const Cart = () => {
               </p>
             )}
 
+            {/* Bonuses Section */}
+            {!user ? (
+              <div className={styles.bonusesSection}>
+                <p className={styles.bonusesPrompt}>
+                  Войдите, чтобы использовать бонусы для скидки.
+                </p>
+              </div>
+            ) : (
+              <div className={styles.bonusesSection}>
+                <div className={styles.bonusesRow}>
+                  <span>Доступно бонусов:</span>
+                  <strong>{balance}</strong>
+                </div>
+                <div className={styles.bonusesInputGroup}>
+                  <input
+                    type="number"
+                    min="0"
+                    max={Math.min(balance, cartTotal)}
+                    placeholder="Количество бонусов"
+                    value={bonusesInput}
+                    onChange={(e) => setBonusesInput(e.target.value)}
+                    className={styles.bonusesInput}
+                    disabled={appliedBonuses > 0}
+                  />
+                  {appliedBonuses > 0 ? (
+                    <button 
+                      type="button"
+                      className={styles.bonusesBtnReset}
+                      onClick={() => {
+                        setAppliedBonuses(0);
+                        setBonusesInput('');
+                      }}
+                    >
+                      Сбросить
+                    </button>
+                  ) : (
+                    <button 
+                      type="button"
+                      className={styles.bonusesBtnApply}
+                      onClick={handleApplyBonuses}
+                    >
+                      Применить
+                    </button>
+                  )}
+                </div>
+                {appliedBonuses > 0 && (
+                  <div className={styles.bonusesDiscountRow}>
+                    <span>Скидка бонусами:</span>
+                    <span>-{formatPrice(appliedBonuses)}</span>
+                  </div>
+                )}
+              </div>
+            )}
+
             <div className={styles.summaryTotalRow}>
               <span>Итого</span>
-              <span className={styles.summaryTotalVal}>{formatPrice(finalTotal)}</span>
+              <span className={styles.summaryTotalVal}>{formatPrice(payableTotal)}</span>
             </div>
 
             {/* Checkout Form */}

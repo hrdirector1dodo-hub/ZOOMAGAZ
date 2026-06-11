@@ -344,3 +344,96 @@
     padding: 32px 20px;
   }
 }
+
+.bonusesSection {
+  border-top: 1.5px dashed var(--color-border);
+  margin-top: 16px;
+  padding-top: 16px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.bonusesPrompt {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.bonusesRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.bonusesInputGroup {
+  display: flex;
+  gap: 8px;
+  height: 40px;
+}
+
+.bonusesInput {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  background-color: var(--color-bg-milk);
+  color: var(--color-text-dark);
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.bonusesInput:focus {
+  border-color: var(--color-primary-jade);
+  background-color: var(--color-white);
+}
+
+.bonusesInput:disabled {
+  background-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.bonusesBtnApply,
+.bonusesBtnReset {
+  padding: 0 16px;
+  height: 100%;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.bonusesBtnApply {
+  background-color: var(--color-primary-jade);
+  color: var(--color-white);
+  border: none;
+}
+
+.bonusesBtnApply:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.bonusesBtnReset {
+  background-color: transparent;
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-border);
+}
+
+.bonusesBtnReset:hover {
+  background-color: var(--color-border);
+  color: var(--color-primary-jade);
+}
+
+.bonusesDiscountRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--color-primary-jade);
+  font-weight: 700;
+  margin-top: 10px;
+}
+
