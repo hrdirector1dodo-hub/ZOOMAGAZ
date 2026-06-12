@@ -42,16 +42,18 @@ const DEMO_USER = {
 };
 
 // Formats a Supabase user object into the structure expected by the frontend
-const formatSupabaseUser = (sbUser) => {
+const formatSupabaseUser = (sbUser, profile) => {
   if (!sbUser) return null;
   return {
     id: sbUser.id,
-    name: sbUser.user_metadata?.name || sbUser.email.split('@')[0],
+    name: profile?.name || sbUser.user_metadata?.name || sbUser.email.split('@')[0],
     email: sbUser.email,
-    phone: sbUser.user_metadata?.phone || '',
-    bonuses: sbUser.user_metadata?.bonuses || 100,
+    phone: profile?.phone || sbUser.user_metadata?.phone || '',
+    bonuses: profile?.bonuses !== undefined ? profile.bonuses : (sbUser.user_metadata?.bonuses || 100),
+    reviewPoints: profile?.review_points !== undefined ? profile.review_points : 0,
+    role: profile?.role || 'user',
     createdAt: sbUser.created_at?.split('T')[0] || new Date().toISOString().split('T')[0],
-    orders: sbUser.user_metadata?.orders || []
+    orders: []
   };
 };
 
@@ -62,18 +64,38 @@ export const AuthProvider = ({ children }) => {
   // Initialize and check current session
   useEffect(() => {
     if (isSupabaseConfigured) {
+      const fetchProfile = async (userId) => {
+        try {
+          const { data, error } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('id', userId)
+            .single();
+          if (error) {
+            console.error('Error fetching profile from DB:', error.message);
+            return null;
+          }
+          return data;
+        } catch (err) {
+          console.error('Error fetching profile:', err);
+          return null;
+        }
+      };
+
       // 1. Check current Supabase session
-      supabase.auth.getSession().then(({ data: { session } }) => {
+      supabase.auth.getSession().then(async ({ data: { session } }) => {
         if (session?.user) {
-          setUser(formatSupabaseUser(session.user));
+          const profile = await fetchProfile(session.user.id);
+          setUser(formatSupabaseUser(session.user, profile));
         }
         setLoading(false);
       });
 
       // 2. Listen to active session changes
-      const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
         if (session?.user) {
-          setUser(formatSupabaseUser(session.user));
+          const profile = await fetchProfile(session.user.id);
+          setUser(formatSupabaseUser(session.user, profile));
         } else {
           setUser(null);
         }
@@ -150,7 +172,12 @@ export const AuthProvider = ({ children }) => {
         }
         return { success: false, error: errorMsg };
       }
-      setUser(formatSupabaseUser(data.user));
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', data.user.id)
+        .single();
+      setUser(formatSupabaseUser(data.user, profile));
       return { success: true };
     } else {
       // Local Mode
@@ -189,7 +216,12 @@ export const AuthProvider = ({ children }) => {
       if (error) {
         return { success: false, error: error.message };
       }
-      setUser(formatSupabaseUser(data.user));
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', data.user.id)
+        .single();
+      setUser(formatSupabaseUser(data.user, profile));
       return { success: true };
     } else {
       // Local Mode
@@ -241,17 +273,27 @@ export const AuthProvider = ({ children }) => {
     if (!user) return { success: false, error: 'Пользователь не авторизован' };
 
     if (isSupabaseConfigured) {
-      const updates = { data: {} };
-      if (updatedFields.name) updates.data.name = updatedFields.name;
-      if (updatedFields.phone) updates.data.phone = updatedFields.phone;
-      if (updatedFields.email) updates.email = updatedFields.email;
-      if (updatedFields.password) updates.password = updatedFields.password;
-
-      const { data, error } = await supabase.auth.updateUser(updates);
-      if (error) {
-        return { success: false, error: error.message };
+      const authUpdates = {};
+      if (updatedFields.email) authUpdates.email = updatedFields.email;
+      if (updatedFields.password) authUpdates.password = updatedFields.password;
+      
+      if (Object.keys(authUpdates).length > 0) {
+        const { error } = await supabase.auth.updateUser(authUpdates);
+        if (error) return { success: false, error: error.message };
       }
-      setUser(formatSupabaseUser(data.user));
+
+      const profileUpdates = {};
+      if (updatedFields.name) profileUpdates.name = updatedFields.name;
+      if (updatedFields.phone) profileUpdates.phone = updatedFields.phone;
+
+      if (Object.keys(profileUpdates).length > 0) {
+        const { error } = await supabase.from('profiles').update(profileUpdates).eq('id', user.id);
+        if (error) return { success: false, error: error.message };
+      }
+
+      const { data: profile } = await supabase.from('profiles').select('*').eq('id', user.id).single();
+      const { data: { user: authUser } } = await supabase.auth.getUser();
+      setUser(formatSupabaseUser(authUser, profile));
       return { success: true };
     } else {
       // Local Mode
@@ -311,7 +353,7 @@ export const AuthProvider = ({ children }) => {
   const resetPassword = async (email, newPassword) => {
     if (isSupabaseConfigured) {
       // Updates password for currently authenticated user session
-      const { data, error } = await supabase.auth.updateUser({ password: newPassword });
+      const { error } = await supabase.auth.updateUser({ password: newPassword });
       if (error) {
         return { success: false, error: error.message };
       }

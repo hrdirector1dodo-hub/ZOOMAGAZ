@@ -28,7 +28,7 @@
 /* Banner Section */
 .banner {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
+  grid-template-columns: 1.2fr 1fr 1fr;
   gap: 30px;
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
@@ -792,6 +792,299 @@
   .bonusesStatsGrid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+/* Review Bonus Widget inside .banner */
+.reviewBonusCard {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(79, 70, 229, 0.05) 100%);
+  border-color: #6366F1 !important;
+}
+
+.couponActive {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(251, 191, 36, 0.12) 100%) !important;
+  border-color: #F59E0B !important;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.2); }
+  50% { box-shadow: 0 0 15px 4px rgba(245, 158, 11, 0.4); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.2); }
+}
+
+.couponActiveContent, .reviewProgressContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.couponIcon {
+  color: #F59E0B !important;
+}
+
+.starIcon {
+  color: #6366F1 !important;
+}
+
+.couponAmount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #D97706;
+  line-height: 1.1;
+  margin: 8px 0;
+}
+
+.couponSub {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #B45309;
+  margin: 0 0 8px 0;
+}
+
+.couponTip {
+  font-size: 0.75rem;
+  color: #D97706;
+  line-height: 1.4;
+  border-top: 1px solid rgba(245, 158, 11, 0.2);
+  padding-top: 8px;
+  width: 100%;
+}
+
+.progressStatus {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 8px 0 4px 0;
+}
+
+.progressCountText {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.1;
+}
+
+.progressLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366F1 0%, #4F46E5 100%);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease-out;
+}
+
+.progressSub {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* Waiting for review styles */
+.waitingBlock {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.waitingTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.waitingBadge {
+  background-color: #6366F1;
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.waitingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.waitingCard {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  background-color: var(--color-bg-milk);
+  transition: var(--transition-smooth);
+}
+
+.waitingCard:hover {
+  border-color: #6366F1;
+  box-shadow: var(--shadow-sm);
+}
+
+.waitingProductInfo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.waitingImageWrapper {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.waitingImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.waitingMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  text-align: left;
+}
+
+.waitingBrand {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.waitingName {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.reviewBtn {
+  background-color: #6366F1;
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  width: 100%;
+  text-align: center;
+}
+
+.reviewBtn:hover {
+  background-color: #4F46E5;
+}
+
+/* Order item review action styles */
+.orderItemLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  max-width: 60%;
+  text-align: left;
+}
+
+.orderItemQtyPrice {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.orderItemRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.orderItemTotalVal {
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.itemReviewBtn {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-jade);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.itemReviewBtn:hover {
+  background-color: var(--color-primary-jade);
+  color: var(--color-white);
+}
+
+.reviewCompletedBadge {
+  background-color: #E0F2FE;
+  color: #0369A1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+@media (max-width: 576px) {
+  .orderItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+  
+  .orderItemLeft {
+    max-width: 100%;
+  }
+  
+  .orderItemRight {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 

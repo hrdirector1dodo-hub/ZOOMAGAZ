@@ -11,6 +11,15 @@ const LOCAL_STORAGE_KEY = 'zoomagaz_chat_messages';
 const LOCAL_STORAGE_STATE_KEY = 'zoomagaz_chat_logic_state';
 const LOCAL_STORAGE_OPEN_KEY = 'zoomagaz_chat_open';
 
+const defaultWelcomeMessage = {
+  id: 'welcome',
+  sender: 'bot',
+  text: "Привет! Я умный помощник ZOOMAGAZ. Могу помочь вам подобрать товары для питомцев, рассказать о скидках, условиях доставки или найти контакты. \n\nНапишите ваш вопрос (например, 'нужен корм для кошки' или 'где находится магазин') или выберите одну из кнопок ниже 👇",
+  timestamp: new Date().toISOString(),
+  type: 'text',
+  quickReplies: ['Подобрать корм', 'Товары для кошки', 'Товары для собаки', 'Акции', 'Контакты']
+};
+
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -25,13 +34,9 @@ const ChatBot = () => {
 
   const messagesEndRef = useRef(null);
 
-  const defaultWelcomeMessage = {
-    id: 'welcome',
-    sender: 'bot',
-    text: "Привет! Я умный помощник ZOOMAGAZ. Могу помочь вам подобрать товары для питомцев, рассказать о скидках, условиях доставки или найти контакты. \n\nНапишите ваш вопрос (например, 'нужен корм для кошки' или 'где находится магазин') или выберите одну из кнопок ниже 👇",
-    timestamp: new Date().toISOString(),
-    type: 'text',
-    quickReplies: ['Подобрать корм', 'Товары для кошки', 'Товары для собаки', 'Акции', 'Контакты']
+  // Automatic scroll to bottom
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   // Load products, branches, promotions from API on mount
@@ -101,11 +106,6 @@ const ChatBot = () => {
     }
   }, [isOpen]);
 
-  // Automatic scroll to bottom
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   useEffect(() => {
     scrollToBottom();
   }, [messages, isTyping]);
@@ -137,6 +137,8 @@ const ChatBot = () => {
         products: response.products,
         branches: response.branches,
         promotions: response.promotions,
+        recommendations: response.recommendations,
+        isAIGenerated: response.isAIGenerated || false,
         quickReplies: response.quickReplies
       };
 

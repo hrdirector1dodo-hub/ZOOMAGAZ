@@ -1,23 +1,25 @@
 // src/pages/Cart/index.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Trash2, Plus, Minus, ShoppingBag, CheckCircle, ArrowRight } from 'lucide-react';
+import { Trash2, Plus, Minus, ArrowRight, ShoppingBag } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
 import { useOrders } from '../../context/OrdersContext';
 import { useBonus } from '../../context/BonusContext';
 import { formatPrice } from '../../utils/format';
 import Button from '../../components/ui/Button';
+import ProductImage from '../../components/product/ProductImage';
+import { useReviews } from '../../context/ReviewContext';
 import styles from './index.module.css';
 
 const Cart = () => {
-  const { cart, updateQuantity, removeFromCart, clearCart, cartTotal, increaseQuantity, decreaseQuantity } = useCart();
+  const { cart, removeFromCart, clearCart, cartTotal, increaseQuantity, decreaseQuantity } = useCart();
   const { user } = useAuth();
   const { createOrder } = useOrders();
   const { balance, spendBonus, addBonus, calculateCashback, getUserKey } = useBonus();
+  const { hasReviewCoupon, consumeReviewCoupon } = useReviews();
   const navigate = useNavigate();
 
-  // Checkout Form States
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -29,12 +31,13 @@ const Cart = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [bonusesInput, setBonusesInput] = useState('');
   const [appliedBonuses, setAppliedBonuses] = useState(0);
+  const [applyCoupon, setApplyCoupon] = useState(false);
 
-  // Delivery Calculations
   const deliveryThreshold = 2000;
   const deliveryCost = cartTotal >= deliveryThreshold ? 0 : 250;
   const finalTotal = cartTotal + deliveryCost;
-  const payableTotal = Math.max(0, finalTotal - appliedBonuses);
+  const couponDiscount = applyCoupon && hasReviewCoupon ? 1000 : 0;
+  const payableTotal = Math.max(0, finalTotal - appliedBonuses - couponDiscount);
 
   const handleApplyBonuses = (e) => {
     e.preventDefault();
@@ -58,11 +61,6 @@ const Cart = () => {
     setAppliedBonuses(val);
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, name: value }));
-  };
-
   const handleFieldChange = (field, value) => {
     let finalValue = value;
     if (field === 'phone') {
@@ -80,7 +78,7 @@ const Cart = () => {
     setFormData(prev => ({ ...prev, [field]: finalValue }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!user) {
@@ -100,51 +98,52 @@ const Cart = () => {
     setIsSubmitting(true);
 
     const userKey = getUserKey();
-    // Save order in localStorage via OrdersContext
-    const order = createOrder(user, cart, payableTotal, formData);
+    
+    const order = await createOrder(user, cart, payableTotal, {
+      ...formData,
+      couponApplied: applyCoupon && hasReviewCoupon
+    });
     const orderId = order ? order.id : 'EP-' + Math.floor(100000 + Math.random() * 900000);
 
     if (appliedBonuses > 0) {
-      spendBonus(userKey, appliedBonuses, orderId);
+      await spendBonus(userKey, appliedBonuses, orderId);
     }
 
-    // Cashback is computed on total amount after applying bonuses
     const payableProductsTotal = cartTotal - appliedBonuses;
     const cashback = calculateCashback(payableProductsTotal);
     
     if (cashback > 0) {
-      addBonus(userKey, cashback, orderId, payableProductsTotal);
+      await addBonus(userKey, cashback, orderId, payableProductsTotal);
     }
 
-    setTimeout(() => {
-      clearCart();
-      setIsSubmitting(false);
-      if (cashback > 0) {
-        alert(`Заказ успешно оформлен. Вам начислено ${cashback} бонусов.`);
-      } else {
-        alert("Заказ успешно оформлен. Кэшбэк начисляется за заказы от 10 000 тг.");
-      }
-      navigate('/profile');
-    }, 500);
+    if (applyCoupon && hasReviewCoupon) {
+      await consumeReviewCoupon();
+    }
+    
+    clearCart();
+    setIsSubmitting(false);
+    
+    let msg = "Заказ успешно оформлен. ";
+    if (cashback > 0) {
+      msg += `Вам начислено ${cashback} бонусов. `;
+    }
+    msg += "\nОставьте отзыв о купленном товаре и получите бонусы!";
+    alert(msg);
+    
+    navigate('/profile');
   };
 
-  // If cart is empty
   if (cart.length === 0) {
     return (
-      <div className="container animate-fade-in">
-        <div className={styles.emptyCart}>
-          <div style={{ fontSize: '4rem' }}>🛒</div>
-          <h2 className={styles.emptyTitle}>Ваша корзина пуста</h2>
-          <p className={styles.emptyText}>
-            Похоже, вы еще не добавили ни одного товара в корзину. Перейдите в каталог, чтобы выбрать качественные и экологичные товары для своего любимого питомца!
-          </p>
-          <Link to="/catalog">
-            <Button variant="primary" size="lg">
-              Перейти в каталог
-              <ArrowRight size={20} />
-            </Button>
-          </Link>
-        </div>
+      <div className={`${styles.emptyCart} container animate-fade-in`}>
+        <ShoppingBag size={64} className={styles.emptyIcon} />
+        <h2>Ваша корзина пуста</h2>
+        <p>Посмотрите каталог товаров, чтобы найти что-нибудь интересное для вашего питомца.</p>
+        <Link to="/catalog">
+          <Button variant="primary" size="lg">
+            Перейти в каталог <ArrowRight size={16} />
+          </Button>
+        </Link>
       </div>
     );
   }
@@ -154,58 +153,55 @@ const Cart = () => {
       <h1 className={styles.cartTitle}>Корзина</h1>
 
       <div className={styles.cartLayout}>
-        {/* Left: Cart Items List */}
         <div className={styles.itemsList}>
-          {cart.map((item) => {
-            const isLowStock = item.inStock > 0 && item.inStock <= 5;
-            return (
-              <div key={item.id} className={styles.cartItem}>
-                <div className={styles.itemImageWrapper}>
-                  <img src={item.images[0]} alt={item.name} className={styles.itemImg} />
-                </div>
-                
-                <div className={styles.itemDetails}>
-                  <span className={styles.itemBrand}>{item.brand}</span>
-                  <Link to={`/product/${item.id}`} className={styles.itemName}>{item.name}</Link>
-                  <span className={styles.itemPrice}>{formatPrice(item.price)}</span>
-                </div>
+          {cart.map((item) => (
+            <div key={item.id} className={styles.cartItem}>
+              <div className={styles.itemImageWrapper}>
+                <ProductImage src={item.images && item.images[0]} alt={item.name} className={styles.itemImg} showText={false} iconSize={24} />
+              </div>
+              
+              <div className={styles.itemDetails}>
+                <span className={styles.itemBrand}>{item.brand}</span>
+                <Link to={`/product/${item.id}`} className={styles.itemName}>{item.name}</Link>
+                <span className={styles.itemPrice}>{formatPrice(item.price)}</span>
+              </div>
 
-                <div className={styles.itemActions}>
-                  {/* Quantity selector */}
-                  <div className={styles.quantitySelector}>
-                    <button 
-                      className={styles.quantityBtn}
-                      onClick={() => decreaseQuantity(item.id)}
-                      aria-label="Уменьшить количество"
-                    >
-                      <Minus size={14} />
-                    </button>
-                    <span className={styles.quantityValue}>{item.quantity}</span>
-                    <button 
-                      className={styles.quantityBtn}
-                      onClick={() => increaseQuantity(item.id)}
-                      disabled={item.quantity >= item.inStock}
-                      aria-label="Увеличить количество"
-                    >
-                      <Plus size={14} />
-                    </button>
-                  </div>
-
-                  <span style={{ fontWeight: '800', fontSize: '1.2rem', minWidth: '90px', textAlign: 'right' }}>
-                    {formatPrice(item.price * item.quantity)}
-                  </span>
-
+              <div className={styles.itemActions}>
+                {/* Quantity selector */}
+                <div className={styles.quantitySelector}>
                   <button 
-                    className={styles.removeBtn}
-                    onClick={() => removeFromCart(item.id)}
-                    aria-label="Удалить товар"
+                    className={styles.quantityBtn}
+                    onClick={() => decreaseQuantity(item.id)}
+                    disabled={item.quantity <= 1}
+                    aria-label="Уменьшить количество"
                   >
-                    <Trash2 size={18} />
+                    <Minus size={14} />
+                  </button>
+                  <span className={styles.quantityValue}>{item.quantity}</span>
+                  <button 
+                    className={styles.quantityBtn}
+                    onClick={() => increaseQuantity(item.id)}
+                    disabled={item.quantity >= item.inStock}
+                    aria-label="Увеличить количество"
+                  >
+                    <Plus size={14} />
                   </button>
                 </div>
+
+                <span style={{ fontWeight: '800', fontSize: '1.2rem', minWidth: '90px', textAlign: 'right' }}>
+                  {formatPrice(item.price * item.quantity)}
+                </span>
+
+                <button 
+                  className={styles.removeBtn}
+                  onClick={() => removeFromCart(item.id)}
+                  aria-label="Удалить товар"
+                >
+                  <Trash2 size={18} />
+                </button>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
         {/* Right: Order Summary & Checkout Form */}
@@ -280,6 +276,27 @@ const Cart = () => {
                     <span>-{formatPrice(appliedBonuses)}</span>
                   </div>
                 )}
+                
+                {couponDiscount > 0 && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', fontSize: '0.95rem', color: 'var(--color-primary-jade)', fontWeight: '600' }}>
+                    <span>Скидка по купону:</span>
+                    <span>-{formatPrice(couponDiscount)}</span>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {hasReviewCoupon && (
+              <div style={{ margin: '16px 0', padding: '16px', border: '1px dashed var(--color-primary-jade)', borderRadius: 'var(--radius-sm)', backgroundColor: 'var(--color-primary-light)' }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', fontWeight: '600', color: 'var(--color-text-dark)' }}>
+                  <input
+                    type="checkbox"
+                    checked={applyCoupon}
+                    onChange={(e) => setApplyCoupon(e.target.checked)}
+                    style={{ width: '18px', height: '18px', accentColor: 'var(--color-primary-jade)' }}
+                  />
+                  <span>Применить купон на 1000 ₽</span>
+                </label>
               </div>
             )}
 

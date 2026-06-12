@@ -10,9 +10,9 @@
     "rating": 4.9,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Royal Canin",
@@ -48,9 +48,9 @@
     "rating": 4.5,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Royal Canin",
@@ -86,9 +86,9 @@
     "rating": 4.5,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Monge",
@@ -124,9 +124,9 @@
     "rating": 4.9,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Orijen",
@@ -162,9 +162,9 @@
     "rating": 5.0,
     "inStock": 12,
     "images": [
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -200,9 +200,9 @@
     "rating": 4.4,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Acana",
@@ -238,9 +238,9 @@
     "rating": 4.3,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -276,9 +276,9 @@
     "rating": 4.4,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -314,9 +314,9 @@
     "rating": 4.7,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Acana",
@@ -352,9 +352,9 @@
     "rating": 4.5,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -390,9 +390,9 @@
     "rating": 4.5,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -428,9 +428,9 @@
     "rating": 5.0,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Royal Canin",
@@ -466,9 +466,9 @@
     "rating": 4.7,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Royal Canin",
@@ -504,9 +504,9 @@
     "rating": 4.5,
     "inStock": 3,
     "images": [
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Royal Canin",
@@ -542,9 +542,9 @@
     "rating": 5.0,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Royal Canin",
@@ -580,9 +580,9 @@
     "rating": 4.7,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Acana",
@@ -618,9 +618,9 @@
     "rating": 4.6,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Farmina",
@@ -656,9 +656,9 @@
     "rating": 4.2,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Acana",
@@ -694,9 +694,9 @@
     "rating": 4.3,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Farmina",
@@ -732,9 +732,9 @@
     "rating": 4.2,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Royal Canin",
@@ -770,9 +770,9 @@
     "rating": 4.6,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1541599540903-216a46ca1ad0?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Orijen",
@@ -808,9 +808,9 @@
     "rating": 4.7,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -846,9 +846,9 @@
     "rating": 4.8,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Farmina",
@@ -884,9 +884,9 @@
     "rating": 4.4,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Royal Canin",
@@ -922,9 +922,9 @@
     "rating": 4.8,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -960,9 +960,9 @@
     "rating": 4.8,
     "inStock": 12,
     "images": [
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Hills",
@@ -998,9 +998,9 @@
     "rating": 4.3,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Monge",
@@ -1036,9 +1036,9 @@
     "rating": 4.4,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Hills",
@@ -1074,9 +1074,9 @@
     "rating": 4.4,
     "inStock": 3,
     "images": [
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Purina Pro Plan",
@@ -1112,9 +1112,9 @@
     "rating": 4.9,
     "inStock": 12,
     "images": [
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Farmina",
@@ -1150,9 +1150,9 @@
     "rating": 5.0,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -1188,9 +1188,9 @@
     "rating": 4.7,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Purina Pro Plan",
@@ -1226,9 +1226,9 @@
     "rating": 4.6,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Grandorf",
@@ -1264,9 +1264,9 @@
     "rating": 4.7,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -1302,9 +1302,9 @@
     "rating": 4.4,
     "inStock": 3,
     "images": [
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Farmina",
@@ -1340,9 +1340,9 @@
     "rating": 4.8,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Purina Pro Plan",
@@ -1378,9 +1378,9 @@
     "rating": 4.6,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Hills",
@@ -1416,9 +1416,9 @@
     "rating": 4.5,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -1454,9 +1454,9 @@
     "rating": 4.8,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Grandorf",
@@ -1492,9 +1492,9 @@
     "rating": 4.9,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1569591159212-b02ea8a9f239?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Grandorf",
@@ -1530,9 +1530,9 @@
     "rating": 4.9,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -1568,9 +1568,9 @@
     "rating": 4.7,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Brit Care",
@@ -1606,9 +1606,9 @@
     "rating": 4.4,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Rio",
@@ -1644,9 +1644,9 @@
     "rating": 4.8,
     "inStock": 3,
     "images": [
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Vitakraft",
@@ -1682,9 +1682,9 @@
     "rating": 4.8,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Vitakraft",
@@ -1720,9 +1720,9 @@
     "rating": 4.4,
     "inStock": 3,
     "images": [
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Padovan",
@@ -1758,9 +1758,9 @@
     "rating": 4.9,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Padovan",
@@ -1796,9 +1796,9 @@
     "rating": 4.7,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -1834,9 +1834,9 @@
     "rating": 4.2,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -1872,9 +1872,9 @@
     "rating": 4.8,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -1910,9 +1910,9 @@
     "rating": 4.7,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Fiory",
@@ -1948,9 +1948,9 @@
     "rating": 4.3,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Vitakraft",
@@ -1986,9 +1986,9 @@
     "rating": 4.5,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Fiory",
@@ -2024,9 +2024,9 @@
     "rating": 4.9,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -2062,9 +2062,9 @@
     "rating": 4.7,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Fiory",
@@ -2100,9 +2100,9 @@
     "rating": 4.6,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -2138,9 +2138,9 @@
     "rating": 4.9,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Fiory",
@@ -2176,9 +2176,9 @@
     "rating": 4.5,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -2214,9 +2214,9 @@
     "rating": 4.7,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Vitakraft",
@@ -2252,9 +2252,9 @@
     "rating": 4.7,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Vitakraft",
@@ -2290,9 +2290,9 @@
     "rating": 4.9,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -2328,9 +2328,9 @@
     "rating": 4.5,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Padovan",
@@ -2366,9 +2366,9 @@
     "rating": 4.9,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1522856283749-6ee9d77f90ec?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1480040868990-14c33b4e27ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Padovan",
@@ -2404,9 +2404,9 @@
     "rating": 5.0,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Aquael",
@@ -2442,9 +2442,9 @@
     "rating": 5.0,
     "inStock": 3,
     "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Sera",
@@ -2480,9 +2480,9 @@
     "rating": 4.9,
     "inStock": 12,
     "images": [
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Prodac",
@@ -2518,9 +2518,9 @@
     "rating": 4.7,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "JBL",
@@ -2556,9 +2556,9 @@
     "rating": 4.8,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Tetra",
@@ -2594,9 +2594,9 @@
     "rating": 4.5,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "JBL",
@@ -2632,9 +2632,9 @@
     "rating": 4.5,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Tetra",
@@ -2670,9 +2670,9 @@
     "rating": 4.7,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Prodac",
@@ -2708,9 +2708,9 @@
     "rating": 4.6,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Sera",
@@ -2746,9 +2746,9 @@
     "rating": 4.4,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "JBL",
@@ -2784,9 +2784,9 @@
     "rating": 4.7,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Aquael",
@@ -2822,9 +2822,9 @@
     "rating": 4.7,
     "inStock": 3,
     "images": [
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Aquael",
@@ -2860,9 +2860,9 @@
     "rating": 4.2,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Tetra",
@@ -2898,9 +2898,9 @@
     "rating": 4.2,
     "inStock": 12,
     "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Sera",
@@ -2936,9 +2936,9 @@
     "rating": 4.8,
     "inStock": 12,
     "images": [
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Sera",
@@ -2974,9 +2974,9 @@
     "rating": 4.7,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Sera",
@@ -3012,9 +3012,9 @@
     "rating": 4.4,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Tetra",
@@ -3050,9 +3050,9 @@
     "rating": 4.3,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Tetra",
@@ -3088,9 +3088,9 @@
     "rating": 5.0,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Prodac",
@@ -3126,9 +3126,9 @@
     "rating": 4.5,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Tetra",
@@ -3164,9 +3164,9 @@
     "rating": 4.7,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Aquael",
@@ -3202,9 +3202,9 @@
     "rating": 4.9,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Little One",
@@ -3240,9 +3240,9 @@
     "rating": 4.7,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Beaphar",
@@ -3278,9 +3278,9 @@
     "rating": 4.8,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Padovan",
@@ -3316,9 +3316,9 @@
     "rating": 4.6,
     "inStock": 3,
     "images": [
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Vitakraft",
@@ -3354,9 +3354,9 @@
     "rating": 4.8,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -3392,9 +3392,9 @@
     "rating": 5.0,
     "inStock": 12,
     "images": [
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Beaphar",
@@ -3430,9 +3430,9 @@
     "rating": 4.5,
     "inStock": 8,
     "images": [
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Padovan",
@@ -3468,9 +3468,9 @@
     "rating": 4.4,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Little One",
@@ -3506,9 +3506,9 @@
     "rating": 4.9,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -3544,9 +3544,9 @@
     "rating": 4.3,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Vitakraft",
@@ -3582,9 +3582,9 @@
     "rating": 4.7,
     "inStock": 22,
     "images": [
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Vitakraft",
@@ -3620,9 +3620,9 @@
     "rating": 4.3,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -3658,9 +3658,9 @@
     "rating": 4.5,
     "inStock": 30,
     "images": [
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Little One",
@@ -3696,9 +3696,9 @@
     "rating": 4.6,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Bosch",
@@ -3734,9 +3734,9 @@
     "rating": 4.6,
     "inStock": 45,
     "images": [
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Bosch",
@@ -3772,9 +3772,9 @@
     "rating": 4.4,
     "inStock": 15,
     "images": [
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Beaphar",
@@ -3810,9 +3810,9 @@
     "rating": 4.4,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Bosch",
@@ -3848,9 +3848,9 @@
     "rating": 4.5,
     "inStock": 5,
     "images": [
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Beaphar",
@@ -3886,9 +3886,9 @@
     "rating": 5.0,
     "inStock": 12,
     "images": [
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Padovan",
@@ -3924,9 +3924,9 @@
     "rating": 4.5,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Versele-Laga",
@@ -3962,9 +3962,9 @@
     "rating": 4.2,
     "inStock": 0,
     "images": [
-      "https://images.unsplash.com/photo-1599110906885-b02446a84ef3?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1615087240969-eeff2fa558f2?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=600&auto=format&fit=crop&q=80"
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available",
+      "https://via.placeholder.com/600x400?text=Image+not+available"
     ],
     "specs": {
       "Бренд": "Padovan",

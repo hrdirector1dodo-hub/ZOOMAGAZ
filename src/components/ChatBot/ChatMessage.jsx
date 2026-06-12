@@ -1,13 +1,16 @@
 // src/components/ChatBot/ChatMessage.jsx
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Clock, Award, ExternalLink } from 'lucide-react';
 import { formatPrice } from '../../utils/format';
+import { CartContext } from '../../context/CartContext';
+import ProductRecommendationCard from './ProductRecommendationCard';
 import styles from './ChatBot.module.css';
 
 const ChatMessage = ({ message }) => {
-  const { sender, text, type, products, branches, promotions, timestamp } = message;
+  const { sender, text, type, products, branches, promotions, recommendations, isAIGenerated, timestamp } = message;
   const isBot = sender === 'bot';
+  const { addToCart } = useContext(CartContext) || {};
 
   const formatTime = (timeStr) => {
     try {
@@ -18,11 +21,36 @@ const ChatMessage = ({ message }) => {
     }
   };
 
+  const handleAddToCart = (product) => {
+    if (addToCart) {
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        quantity: 1,
+        image: product.images?.[0] || '/default-product.png'
+      });
+    }
+  };
+
   return (
     <div className={`${styles.messageWrapper} ${isBot ? styles.botWrapper : styles.userWrapper}`}>
       {isBot && <div className={styles.botAvatar}>🐾</div>}
       <div className={`${styles.messageBubble} ${isBot ? styles.botBubble : styles.userBubble}`}>
         {text && <div className={styles.messageText}>{text}</div>}
+
+        {/* AI Product Recommendations (NEW!) */}
+        {type === 'ai_recommendations' && recommendations && recommendations.length > 0 && (
+          <div className={styles.aiRecommendationsContainer}>
+            {recommendations.map((rec) => (
+              <ProductRecommendationCard
+                key={rec.id}
+                product={rec}
+                onAddToCart={handleAddToCart}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Structured Products Rendering */}
         {type === 'products' && products && products.length > 0 && (

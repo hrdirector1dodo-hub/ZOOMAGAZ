@@ -1,18 +1,21 @@
 // src/pages/ProductDetail/index.jsx
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ShoppingCart, Plus, Minus, Check, ArrowLeft, Star, Heart } from 'lucide-react';
+import { ShoppingCart, Plus, Minus, Check } from 'lucide-react';
 import { api } from '../../services/api';
 import { useCart } from '../../context/CartContext';
 import { formatPrice } from '../../utils/format';
 import Rating from '../../components/ui/Rating';
 import Button from '../../components/ui/Button';
 import ProductCard from '../../components/product/ProductCard';
+import ProductImage from '../../components/product/ProductImage';
+import { useReviews } from '../../context/ReviewContext';
 import styles from './index.module.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart, cart } = useCart();
+  const { getReviewsForProduct, getAverageRatingForProduct } = useReviews();
   
   const [product, setProduct] = useState(null);
   const [similarProducts, setSimilarProducts] = useState([]);
@@ -23,6 +26,7 @@ const ProductDetail = () => {
 
   // Reset states when ID changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setQuantity(1);
     setActiveImageIndex(0);
     
@@ -72,7 +76,9 @@ const ProductDetail = () => {
     );
   }
 
-  const { name, brand, category, categoryName, price, description, rating, inStock, images, specs, reviews } = product;
+  const { name, brand, category, categoryName, price, description, inStock, images, specs } = product;
+  const productReviews = getReviewsForProduct(product.id);
+  const avgRating = getAverageRatingForProduct(product.id);
   const isOutOfStock = inStock === 0;
   const isLowStock = inStock > 0 && inStock <= 5;
 
@@ -105,17 +111,17 @@ const ProductDetail = () => {
         {/* Gallery */}
         <div className={styles.galleryCol}>
           <div className={styles.mainImageWrapper}>
-            <img src={images[activeImageIndex]} alt={name} className={styles.mainImage} />
+            <ProductImage src={images && images[activeImageIndex]} alt={name} className={styles.mainImage} iconSize={64} />
           </div>
           
           <div className={styles.thumbnails}>
-            {images.map((img, idx) => (
+            {images && images.map((img, idx) => (
               <div 
                 key={idx}
                 className={`${styles.thumbnailWrapper} ${activeImageIndex === idx ? styles.thumbnailWrapperActive : ''}`}
                 onClick={() => setActiveImageIndex(idx)}
               >
-                <img src={img} alt={`${name} thumbnail ${idx}`} className={styles.thumbnailImg} />
+                <ProductImage src={img} alt={`${name} thumbnail ${idx}`} className={styles.thumbnailImg} showText={false} iconSize={24} />
               </div>
             ))}
           </div>
@@ -131,8 +137,8 @@ const ProductDetail = () => {
           <h1 className={styles.title}>{name}</h1>
 
           <div className={styles.ratingRow}>
-            <Rating value={rating} />
-            <span className={styles.reviewsCount}>({reviews.length} отзывов покупателей)</span>
+            <Rating value={avgRating} />
+            <span className={styles.reviewsCount}>({productReviews.length} отзывов покупателей)</span>
           </div>
 
           <div className={styles.priceRow}>
@@ -208,7 +214,7 @@ const ProductDetail = () => {
             className={`${styles.tabTitle} ${activeTab === 'reviews' ? styles.tabTitleActive : ''}`}
             onClick={() => setActiveTab('reviews')}
           >
-            Отзывы ({reviews.length})
+            Отзывы ({productReviews.length})
           </div>
         </div>
 
@@ -226,7 +232,7 @@ const ProductDetail = () => {
             </table>
           ) : (
             <div className={styles.reviewsList}>
-              {reviews.map((rev, idx) => (
+              {productReviews.map((rev, idx) => (
                 <div key={idx} className={styles.reviewItem}>
                   <div className={styles.reviewMeta}>
                     <div>

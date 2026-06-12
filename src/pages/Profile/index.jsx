@@ -1,24 +1,60 @@
 // src/pages/Profile/index.jsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { User, Mail, Phone, Calendar, Gift, ShoppingBag, ChevronDown, ChevronUp, Save, LogOut } from 'lucide-react';
+import { User, Mail, Phone, Calendar, Gift, ShoppingBag, ChevronDown, ChevronUp, Save, LogOut, Star } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useOrders } from '../../context/OrdersContext';
 import { useBonus } from '../../context/BonusContext';
+import { useReviews } from '../../context/ReviewContext';
 import Button from '../../components/ui/Button';
+import ReviewModal from '../../components/product/ReviewModal';
+import ProductImage from '../../components/product/ProductImage';
 import styles from './index.module.css';
 
 const Profile = () => {
   const { user, updateProfile, logout, loading: authLoading } = useAuth();
   const { getUserOrders } = useOrders();
   const { balance: bonusBalance, history: bonusHistory } = useBonus();
+  const {
+    reviewPoints,
+    hasReviewCoupon,
+    addReview,
+    hasReviewedProduct,
+    getProductsWaitingForReview
+  } = useReviews();
+
   const navigate = useNavigate();
 
   const [orders, setOrders] = useState([]);
+  const [reviewProduct, setReviewProduct] = useState(null);
+  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
+
+  const waitingProducts = getProductsWaitingForReview();
+
+  const handleOpenReviewModal = (product) => {
+    setReviewProduct(product);
+    setIsReviewModalOpen(true);
+  };
+
+  const getReviewDeclension = (count) => {
+    const mod10 = count % 10;
+    const mod100 = count % 100;
+    if (mod100 >= 11 && mod100 <= 19) {
+      return 'отзывов';
+    }
+    if (mod10 === 1) {
+      return 'отзыв';
+    }
+    if (mod10 >= 2 && mod10 <= 4) {
+      return 'отзыва';
+    }
+    return 'отзывов';
+  };
 
   // Load orders
   useEffect(() => {
     if (user) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setOrders(getUserOrders(user));
     }
   }, [user, getUserOrders]);
@@ -45,6 +81,7 @@ const Profile = () => {
   // Sync state with user data
   useEffect(() => {
     if (user) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setName(user.name || '');
       setEmail(user.email || '');
       setPhone(user.phone || '');
@@ -108,7 +145,7 @@ const Profile = () => {
       } else {
         setError(result.error);
       }
-    } catch (err) {
+    } catch {
       setError('Не удалось обновить профиль. Попробуйте позже.');
     } finally {
       setLoading(false);
@@ -143,6 +180,43 @@ const Profile = () => {
           <div className={styles.bonusTip}>
             Начисляется кэшбэк 1% за заказы от 10 000 ₽.
           </div>
+        </div>
+
+        {/* Review Progress Widget */}
+        <div className={`${styles.bonusCard} ${styles.reviewBonusCard} ${hasReviewCoupon ? styles.couponActive : ''}`}>
+          {hasReviewCoupon ? (
+            <div className={styles.couponActiveContent}>
+              <div className={styles.bonusHeader}>
+                <Gift size={20} className={styles.couponIcon} />
+                <span>Активный купон</span>
+              </div>
+              <div className={styles.couponAmount}>1 000 ₽</div>
+              <p className={styles.couponSub}>Готов к использованию!</p>
+              <div className={styles.couponTip}>
+                Скидка применена в корзине.
+              </div>
+            </div>
+          ) : (
+            <div className={styles.reviewProgressContent}>
+              <div className={styles.bonusHeader}>
+                <Star size={20} className={styles.starIcon} />
+                <span>Отзывы за бонусы</span>
+              </div>
+              <div className={styles.progressStatus}>
+                <span className={styles.progressCountText}>{reviewPoints} / 10</span>
+                <span className={styles.progressLabel}>отзывов</span>
+              </div>
+              <div className={styles.progressBar}>
+                <div 
+                  className={styles.progressFill} 
+                  style={{ width: `${(reviewPoints / 10) * 100}%` }}
+                ></div>
+              </div>
+              <p className={styles.progressSub}>
+                Еще {10 - reviewPoints} {getReviewDeclension(10 - reviewPoints)} до купона на 1000 ₽
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -196,6 +270,44 @@ const Profile = () => {
         <main className={styles.content}>
           {activeTab === 'orders' ? (
             <div className={styles.tabContent}>
+              {/* "Товары, ожидающие отзыва" block */}
+              {waitingProducts.length > 0 && (
+                <div className={styles.waitingBlock}>
+                  <h3 className={styles.waitingTitle}>
+                    Товары, ожидающие отзыва
+                    <span className={styles.waitingBadge}>{waitingProducts.length}</span>
+                  </h3>
+                  <div className={styles.waitingGrid}>
+                    {waitingProducts.map((product) => (
+                      <div key={product.id} className={styles.waitingCard}>
+                        <div className={styles.waitingProductInfo}>
+                          <div className={styles.waitingImageWrapper}>
+                            <ProductImage 
+                              src={product.images && product.images[0]} 
+                              alt={product.name} 
+                              className={styles.waitingImage}
+                              iconSize={20}
+                              showText={false}
+                            />
+                          </div>
+                          <div className={styles.waitingMeta}>
+                            <span className={styles.waitingBrand}>{product.brand || 'EcoPet'}</span>
+                            <span className={styles.waitingName} title={product.name}>{product.name}</span>
+                          </div>
+                        </div>
+                        <button 
+                          className={styles.reviewBtn}
+                          onClick={() => handleOpenReviewModal(product)}
+                          type="button"
+                        >
+                          Оставить отзыв
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <h2 className={styles.contentTitle}>История заказов</h2>
               {!orders || orders.length === 0 ? (
                 <div className={styles.emptyOrders}>
@@ -290,10 +402,30 @@ const Profile = () => {
                                 const itemTotal = item.total || (itemPrice * qty);
                                 return (
                                   <div key={idx} className={styles.orderItem}>
-                                    <div className={styles.orderItemName}>{item.name}</div>
-                                    <div className={styles.orderItemMeta}>
-                                      <span>{qty} шт x {itemPrice.toLocaleString()} ₽</span>
-                                      <span>{itemTotal.toLocaleString()} ₽</span>
+                                    <div className={styles.orderItemLeft}>
+                                      <div className={styles.orderItemName}>{item.name}</div>
+                                      <div className={styles.orderItemQtyPrice}>
+                                        {qty} шт x {itemPrice.toLocaleString()} ₽
+                                      </div>
+                                    </div>
+                                    <div className={styles.orderItemRight}>
+                                      <span className={styles.orderItemTotalVal}>{itemTotal.toLocaleString()} ₽</span>
+                                      {hasReviewedProduct(item.id) ? (
+                                        <span className={styles.reviewCompletedBadge}>Отзыв оставлен</span>
+                                      ) : (
+                                        <button 
+                                          className={styles.itemReviewBtn}
+                                          onClick={() => handleOpenReviewModal({
+                                            id: item.id,
+                                            name: item.name,
+                                            price: item.price,
+                                            images: []
+                                          })}
+                                          type="button"
+                                        >
+                                          Оставить отзыв
+                                        </button>
+                                      )}
                                     </div>
                                   </div>
                                 );
@@ -508,6 +640,17 @@ const Profile = () => {
           )}
         </main>
       </div>
+
+      {/* Review Modal */}
+      <ReviewModal 
+        isOpen={isReviewModalOpen}
+        onClose={() => {
+          setIsReviewModalOpen(false);
+          setReviewProduct(null);
+        }}
+        product={reviewProduct}
+        onSubmit={addReview}
+      />
     </div>
   );
 };

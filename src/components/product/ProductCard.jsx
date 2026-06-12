@@ -3,13 +3,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Check, Plus, Minus } from 'lucide-react';
 import Rating from '../ui/Rating';
+import ProductImage from './ProductImage';
 import { useCart } from '../../context/CartContext';
+import { useReviews } from '../../context/ReviewContext';
 import { formatPrice } from '../../utils/format';
 import styles from './ProductCard.module.css';
 
 const ProductCard = ({ product }) => {
   const { addToCart, cart } = useCart();
+  const { getAverageRatingForProduct } = useReviews();
   const { id, name, brand, price, rating, inStock, images } = product;
+  const avgRating = getAverageRatingForProduct(id) || rating;
   
   const isInCart = cart.some(item => item.id === id);
   const isOutOfStock = inStock === 0;
@@ -51,7 +55,7 @@ const ProductCard = ({ product }) => {
     <Link to={`/product/${id}`} className={styles.card}>
       <div className={styles.imageContainer}>
         {stockBadge}
-        <img src={images[0]} alt={name} className={styles.image} loading="lazy" />
+        <ProductImage src={images && images[0]} alt={name} className={styles.image} />
       </div>
       
       <div className={styles.info}>
@@ -59,7 +63,7 @@ const ProductCard = ({ product }) => {
         <h3 className={styles.title} title={name}>{name}</h3>
         
         <div className={styles.ratingRow}>
-          <Rating value={rating} />
+          <Rating value={avgRating} />
         </div>
         
         <div className={styles.bottomRow}>
@@ -67,29 +71,26 @@ const ProductCard = ({ product }) => {
             <span className={styles.priceLabel}>Цена</span>
             <span className={styles.price}>{formatPrice(price)}</span>
           </div>
-          
           <div className={styles.actionsCol}>
-            {!isOutOfStock && (
-              <div className={styles.quantitySelector}>
-                <button 
-                  className={styles.quantityBtn}
-                  onClick={handleDecrement}
-                  disabled={quantity <= 1}
-                  aria-label="Уменьшить количество"
-                >
-                  <Minus size={14} />
-                </button>
-                <span className={styles.quantityValue}>{quantity}</span>
-                <button 
-                  className={styles.quantityBtn}
-                  onClick={handleIncrement}
-                  disabled={quantity >= inStock}
-                  aria-label="Увеличить количество"
-                >
-                  <Plus size={14} />
-                </button>
-              </div>
-            )}
+            <div className={styles.quantitySelector}>
+              <button 
+                className={styles.quantityBtn}
+                onClick={handleDecrement}
+                disabled={quantity <= 1 || isOutOfStock}
+                aria-label="Уменьшить количество"
+              >
+                <Minus size={14} />
+              </button>
+              <span className={styles.quantityValue}>{isOutOfStock ? 1 : quantity}</span>
+              <button 
+                className={styles.quantityBtn}
+                onClick={handleIncrement}
+                disabled={quantity >= inStock || isOutOfStock}
+                aria-label="Увеличить количество"
+              >
+                <Plus size={14} />
+              </button>
+            </div>
             
             <button 
               className={styles.addButton}

@@ -1,4 +1,5 @@
 // src/components/ChatBot/chatBotLogic.js
+import { getProductRecommendations, isProductQuery } from '../../services/productRecommender';
 
 // Normalizes input string for easier keyword matching
 const normalizeText = (text) => {
@@ -118,6 +119,32 @@ export const searchProducts = (products, criteria) => {
 // Main processing function for messages
 export const processUserMessage = (messageText, state, products, branches, promotions) => {
   const text = normalizeText(messageText);
+
+  // --- AI Product Recommender (NEW!) ---
+  // Check if this is a product-related query and use intelligent recommendations
+  if (isProductQuery(messageText)) {
+    const aiRecommendation = getProductRecommendations(messageText);
+    
+    if (aiRecommendation.success && aiRecommendation.recommendations.length > 0) {
+      return {
+        text: aiRecommendation.message,
+        type: 'ai_recommendations',
+        recommendations: aiRecommendation.recommendations,
+        totalFound: aiRecommendation.totalFound,
+        nextState: INITIAL_STATE,
+        quickReplies: ['Подобрать еще', 'В корзину', 'Акции', 'Контакты'],
+        isAIGenerated: true
+      };
+    } else if (!aiRecommendation.success) {
+      // AI understood it's a product query but couldn't find or parse it
+      return {
+        text: aiRecommendation.message,
+        type: 'text',
+        nextState: INITIAL_STATE,
+        quickReplies: ['Попробовать еще', 'Классический подбор', 'Акции', 'Контакты']
+      };
+    }
+  }
 
   // --- Veterinary caution check ---
   const vetKeywords = [

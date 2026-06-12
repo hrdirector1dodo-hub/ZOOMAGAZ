@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { BonusProvider } from './context/BonusContext';
 import { OrdersProvider } from './context/OrdersContext';
+import { ReviewProvider } from './context/ReviewContext';
 import { CartProvider } from './context/CartContext';
 import MainLayout from './layouts/MainLayout';
 import AppRoutes from './routes';
@@ -15,11 +16,13 @@ function App() {
       <AuthProvider>
         <BonusProvider>
           <OrdersProvider>
-            <CartProvider>
-              <MainLayout>
-                <AppRoutes />
-              </MainLayout>
-            </CartProvider>
+            <ReviewProvider>
+              <CartProvider>
+                <MainLayout>
+                  <AppRoutes />
+                </MainLayout>
+              </CartProvider>
+            </ReviewProvider>
           </OrdersProvider>
         </BonusProvider>
       </AuthProvider>

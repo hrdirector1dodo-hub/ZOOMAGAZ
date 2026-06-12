@@ -228,9 +228,18 @@ const MainLayout = ({ children }) => {
               Современный экологичный зоомагазин. Мы предлагаем только проверенные и натуральные корма, полезные лакомства и аксессуары для ваших любимых питомцев.
             </p>
             <div className={styles.socials}>
-              <a href="#" className={styles.socialIcon} aria-label="VK"><span style={{ fontWeight: 'bold' }}>VK</span></a>
-              <a href="#" className={styles.socialIcon} aria-label="Telegram"><span style={{ fontWeight: 'bold' }}>TG</span></a>
-              <a href="#" className={styles.socialIcon} aria-label="WhatsApp"><span style={{ fontWeight: 'bold' }}>WA</span></a>
+              {/* REPLACE 'YOUR_VK_USERNAME_HERE' with your actual VKontakte username */}
+              <a href="https://vk.com/YOUR_VK_USERNAME_HERE" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="VK">
+                <span style={{ fontWeight: 'bold' }}>VK</span>
+              </a>
+              {/* REPLACE 'YOUR_TELEGRAM_USERNAME_HERE' with your actual Telegram username/channel */}
+              <a href="https://t.me/YOUR_TELEGRAM_USERNAME_HERE" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Telegram">
+                <span style={{ fontWeight: 'bold' }}>TG</span>
+              </a>
+              {/* REPLACE '79991234567' with your actual WhatsApp phone number (digits only, e.g. 79991234567) */}
+              <a href="https://wa.me/79991234567" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="WhatsApp">
+                <span style={{ fontWeight: 'bold' }}>WA</span>
+              </a>
             </div>
           </div>
 

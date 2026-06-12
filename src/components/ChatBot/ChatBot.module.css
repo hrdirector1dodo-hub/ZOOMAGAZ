@@ -571,6 +571,15 @@
   cursor: not-allowed;
 }
 
+/* AI Product Recommendations Container */
+.aiRecommendationsContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+}
+
 /* Responsive adjustment for Mobile */
 @media (max-width: 480px) {
   .chatBotContainer {
