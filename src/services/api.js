@@ -1,5 +1,5 @@
 // src/services/api.js
-import products from '../data/products.json';
+
 import reviews from '../data/reviews.json';
 import promotions from '../data/promotions.json';
 import articles from '../data/articles.json';
@@ -21,11 +21,11 @@ export const api = {
         return data;
       } catch (err) {
         console.error('Failed to fetch products from Supabase:', err);
-        return products; // local fallback
+        return []; // empty fallback
       }
     }
     await delay(300);
-    return products;
+    return []; // empty fallback
   },
   
   getProductById: async (id) => {
