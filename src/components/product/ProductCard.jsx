@@ -12,7 +12,8 @@ import styles from './ProductCard.module.css';
 const ProductCard = ({ product }) => {
   const { addToCart, cart } = useCart();
   const { getAverageRatingForProduct } = useReviews();
-  const { id, name, brand, price, rating, inStock, images } = product;
+  const { id, name, brand, price, rating, inStock, images, image } = product;
+  const imageSrc = (Array.isArray(images) && images.length > 0) ? images[0] : image;
   const avgRating = getAverageRatingForProduct(id) || rating;
   
   const isInCart = cart.some(item => item.id === id);
@@ -55,7 +56,7 @@ const ProductCard = ({ product }) => {
     <Link to={`/product/${id}`} className={styles.card}>
       <div className={styles.imageContainer}>
         {stockBadge}
-        <ProductImage src={images && images[0]} alt={name} className={styles.image} />
+        <ProductImage src={imageSrc} alt={name} className={styles.image} />
       </div>
       
       <div className={styles.info}>
