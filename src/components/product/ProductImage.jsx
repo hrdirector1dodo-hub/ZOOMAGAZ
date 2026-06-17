@@ -12,11 +12,29 @@ const ProductImage = ({ src, alt, className, containerClassName, iconSize = 40, 
   }, [src]);
 
   if (!src || hasError) {
+    // If the source image is missing or failed to load, try the product placeholder.
+    const placeholderPath = '/images/products/placeholder.png';
+    // If we are already trying the placeholder and it also fails, fall back to the SVG.
+    if (src && src.includes('placeholder.png')) {
+      // SVG placeholder (original implementation)
+      return (
+        <div className={`${styles.placeholderContainer} ${containerClassName || ''}`}>
+          <Image size={iconSize} className={styles.placeholderIcon} />
+          {showText && <span className={styles.placeholderText}>Изображение скоро появится</span>}
+        </div>
+      );
+    }
     return (
-      <div className={`${styles.placeholderContainer} ${containerClassName || ''}`}>
-        <Image size={iconSize} className={styles.placeholderIcon} />
-        {showText && <span className={styles.placeholderText}>Изображение скоро появится</span>}
-      </div>
+      <img
+        src={placeholderPath}
+        alt={alt || 'Placeholder'}
+        className={className}
+        loading="lazy"
+        onError={() => {
+          // If placeholder image fails, trigger re‑render which will hit the SVG fallback above.
+          setHasError(true);
+        }}
+      />
     );
   }
 

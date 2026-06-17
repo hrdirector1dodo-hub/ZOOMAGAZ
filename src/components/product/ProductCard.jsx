@@ -12,8 +12,8 @@ import styles from './ProductCard.module.css';
 const ProductCard = ({ product }) => {
   const { addToCart, cart } = useCart();
   const { getAverageRatingForProduct } = useReviews();
-  const { id, name, brand, price, rating, inStock, images, image } = product;
-  const imageSrc = (Array.isArray(images) && images.length > 0) ? images[0] : image;
+  const { id, name, brand, price, rating, inStock } = product;
+  const imageSrc = `/images/products/${id}.jpg`;
   const avgRating = getAverageRatingForProduct(id) || rating;
   
   const isInCart = cart.some(item => item.id === id);

@@ -76,7 +76,8 @@ const ProductDetail = () => {
     );
   }
 
-  const { name, brand, category, categoryName, price, description, inStock, images, specs } = product;
+  const { name, brand, category, categoryName, price, description, inStock, specs } = product;
+  const imageSrc = `/images/products/${product.id}.jpg`;
   const productReviews = getReviewsForProduct(product.id);
   const avgRating = getAverageRatingForProduct(product.id);
   const isOutOfStock = inStock === 0;
@@ -111,19 +112,15 @@ const ProductDetail = () => {
         {/* Gallery */}
         <div className={styles.galleryCol}>
           <div className={styles.mainImageWrapper}>
-            <ProductImage src={images && images[activeImageIndex]} alt={name} className={styles.mainImage} iconSize={64} />
+            <ProductImage src={imageSrc} alt={name} className={styles.mainImage} iconSize={64} />
           </div>
           
           <div className={styles.thumbnails}>
-            {images && images.map((img, idx) => (
-              <div 
-                key={idx}
-                className={`${styles.thumbnailWrapper} ${activeImageIndex === idx ? styles.thumbnailWrapperActive : ''}`}
-                onClick={() => setActiveImageIndex(idx)}
-              >
-                <ProductImage src={img} alt={`${name} thumbnail ${idx}`} className={styles.thumbnailImg} showText={false} iconSize={24} />
+            {
+              <div className={`${styles.thumbnailWrapper} ${styles.thumbnailWrapperActive}`} onClick={() => setActiveImageIndex(0)}>
+                <ProductImage src={imageSrc} alt={`${name} thumbnail`} className={styles.thumbnailImg} showText={false} iconSize={24} />
               </div>
-            ))}
+            }
           </div>
         </div>
 
