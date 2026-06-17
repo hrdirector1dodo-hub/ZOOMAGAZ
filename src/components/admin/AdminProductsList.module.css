@@ -1,0 +1,153 @@
+/* src/components/admin/AdminProductsList.module.css */
+.container {
+  padding: 24px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-main);
+  font-size: 2rem;
+  color: var(--color-text-dark);
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+  background-color: var(--color-bg-milk);
+}
+
+.search:focus {
+  outline: none;
+  border-color: var(--color-primary-jade);
+  background-color: var(--color-white);
+}
+
+.filter {
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  background-color: var(--color-bg-milk);
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.filter:focus {
+  border-color: var(--color-primary-jade);
+  background-color: var(--color-white);
+}
+
+.addBtn {
+  padding: 12px 24px;
+  background-color: var(--color-primary-jade);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-family: var(--font-main);
+  transition: var(--transition-smooth);
+}
+
+.addBtn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 168, 107, 0.2);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-family: var(--font-main);
+}
+
+.table th,
+.table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table th {
+  background-color: var(--color-bg-milk);
+  color: var(--color-text-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.table tr:hover {
+  background-color: rgba(0, 168, 107, 0.02);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.edit {
+  color: var(--color-primary-jade);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.edit:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+.delete {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-main);
+  padding: 0;
+  transition: var(--transition-fast);
+}
+
+.delete:hover {
+  color: #bd2130;
+  text-decoration: underline;
+}
+
+.info {
+  font-family: var(--font-main);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 40px 0;
+  font-size: 1.1rem;
+}
+
+.error {
+  font-family: var(--font-main);
+  color: var(--color-danger);
+  text-align: center;
+  padding: 40px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}

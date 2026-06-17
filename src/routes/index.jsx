@@ -6,6 +6,7 @@ import Catalog from '../pages/Catalog';
 import ProductDetail from '../pages/ProductDetail';
 import Cart from '../pages/Cart';
 import Profile from '../pages/Profile';
+import AdminRoutes from '../routes/adminRoutes';
 import NotFound from '../pages/NotFound';
 
 const AppRoutes = () => {
@@ -16,6 +17,10 @@ const AppRoutes = () => {
       <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/profile" element={<Profile />} />
+      
+      {/* Protect/mount all admin routes */}
+      <Route path="/admin/*" element={<AdminRoutes />} />
+      
       {/* Fallback route */}
       <Route path="*" element={<NotFound />} />
     </Routes>

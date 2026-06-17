@@ -1,0 +1,68 @@
+/* src/layouts/AdminLayout.module.css */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #2e7d32; /* dark green accent */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.title {
+  margin: 0 0 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.activeLink {
+  background-color: #66bb6a; /* lighter green */
+  color: #fff;
+}
+
+.logoutBtn {
+  margin-top: auto;
+  background: #c62828;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #fff;
+  padding: 12px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
